@@ -1,0 +1,60 @@
+{% extends 'SubHazApp/base/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="banner work-banner">
+    <div class="element">
+        <h2 class="title-h2">Lorem ipsum dolor sit amet, consectetur
+           <br> adipisicing elit.</h2>
+        <div class="search search-2">
+            <form id="search" action="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="search" placeholder="Search by topic or keywords">
+                <button type="submit" name="submit">SEARCH</button>
+            </form>
+        </div>
+        <div class="keywords">
+            <span class="popular-word text">Popular:</span>
+            <a href="#" class="keyword text"><span >Chemical</span></a>
+            <a href="#" class="keyword text"><span>Experimental</span></a>
+            <a href="#" class="keyword text"><span>Doctor</span></a>
+        </div>
+    </div>
+</section>
+
+
+<section class="work">
+    <div class="element">
+        <h2 class="title-h2">SUBHAZ 1</h2>
+        <div class="work-grid">
+            <a href="#"><div class="work-display">
+                <img src="https://www.theladders.com/wp-content/uploads/stress-work-191008-800x450.jpg" alt="img">
+                <h3 class="title-h3">Work 1</h3>
+                <p class="text">Lorem ipsum dolor sit amet</p>
+            </div></a>
+            <a href="#"><div class="work-display">
+                <img src="https://www.theladders.com/wp-content/uploads/stress-work-191008-800x450.jpg" alt="img">
+                <h3 class="title-h3">Work 1</h3>
+                <p class="text">Lorem ipsum dolor sit amet</p>
+            </div></a>
+            <a href="#"><div class="work-display">
+                <img src="https://www.theladders.com/wp-content/uploads/stress-work-191008-800x450.jpg" alt="img">
+                <h3 class="title-h3">Work 1</h3>
+                <p class="text">Lorem ipsum dolor sit amet</p>
+            </div></a>
+            <a href="#"><div class="work-display">
+                <img src="https://www.theladders.com/wp-content/uploads/stress-work-191008-800x450.jpg" alt="img">
+                <h3 class="title-h3">Work 1</h3>
+                <p class="text">Lorem ipsum dolor sit amet</p>
+            </div></a>
+        </div>
+        
+    </div>
+    
+</section>
+
+<!--NEWSLETTER-->
+
+{% include "SubHazApp/global/newsletter.html" %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% load static %}
+<section class="blog-slider">
+  <div class="slideshow-container">
+    {% for post in posts.all|slice:"0:4" %}  
+    <div class="element mySlides1 mySlides fade">
+        <div class="blog-slider-image">
+          <a href="{% url 'post_details' post.slug %}"><img src="{{ post.image.url }}" alt="{{post.title}}"></a>
+        </div>
+        <div class="blog-slider-info">
+            <a href="#" class="link">{{post.category}}</a>
+            <a href="{% url 'post_details' post.slug %}"><h2 class="title-h2">{{post.title}}</h2></a>
+            <p><b>By: {{post.author}}</b> | {{post.created_on}}</p>
+            <a href="{% url 'post_details' post.slug %}" class="link">LEARN MORE</a>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot-1 dot" onclick="currentSlide1(1)"></span>
+    <span class="dot-1 dot" onclick="currentSlide1(2)"></span>
+    <span class="dot-1 dot" onclick="currentSlide1(3)"></span>
+    <span class="dot-1 dot" onclick="currentSlide1(4)"></span>
+  </div>
+</section>
+
+<script>
+  let slideIndex = 1;
+  showSlides1(slideIndex);
+
+  // Next/previous controls
+  function plusSlides1(n) {
+    showSlides1(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide1(n) {
+    showSlides1(slideIndex = n);
+  }
+
+  function showSlides1(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides1");
+    let dots = document.getElementsByClassName("dot-1");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "flex";
+    dots[slideIndex-1].className += " active";
+  }
+</script>

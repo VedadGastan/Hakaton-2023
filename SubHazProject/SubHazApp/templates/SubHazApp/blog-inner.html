@@ -1,0 +1,31 @@
+{% extends 'SubHazApp/base/base-white.html' %}
+{% load static %}
+{% block content %}
+
+<section class="f-image">
+    <div class="element">
+        <img src="{{ post.image.url }}" alt="{{post.title}}">
+    </div>
+</section>
+
+<section class="post-content">
+    <div class="element">
+        <p class="date">{{post.created_on}}</p>
+        <h1 class="title-h1">{{post.title | safe}}</h1>
+        {{post.content | safe}}
+        
+    </div>
+</section>
+<section class="hr">
+    <div class="element">
+        <hr>
+    </div>
+</section>
+
+
+{% include "SubHazApp/global/post-larger.html" %}
+<!--NEWSLETTER-->
+
+{% include "SubHazApp/global/newsletter.html" %}
+
+{% endblock %}

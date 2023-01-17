@@ -1,0 +1,32 @@
+{% extends 'SubHazApp/base/base-white.html' %}
+{% load static %}
+{% block content %}
+
+
+<section class="search">
+    <form id="search" action="#">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" name="search" placeholder="Search by topic or keywords">
+        <button type="submit" name="submit">SEARCH</button>
+    </form>
+</section>
+
+{% include "SubHazApp/global/post-slider-1.html" %}
+
+{% include "SubHazApp/global/post-larger.html" %}
+
+
+{% include "SubHazApp/global/post-slider-2.html" %}
+
+{% include "SubHazApp/global/post-larger.html" %}
+
+
+{% include "SubHazApp/global/post-small.html" %}
+<!--NEWSLETTER-->
+
+{% include "SubHazApp/global/newsletter.html" %}
+
+
+<!--FOOTER-->
+
+{% endblock %}

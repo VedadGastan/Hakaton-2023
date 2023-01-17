@@ -1,0 +1,16 @@
+{% load static %}
+<section class="blog-larger">
+    <div class="element">
+    
+    {% for post in posts.all|slice:"0:3" %}
+        <div class="post-large">
+            <a href="{% url 'post_details' post.slug %}"><img src="{{ post.image.url }}" alt="{{post.title}}"></a>
+            <a href="#" class="link">{{post.category}}</a>
+            <a href="{% url 'post_details' post.slug %}"><h4 class="post-title">{{post.title}}</h4></a>
+            <p class="post-excerpt">{{post.excerpt}}</p>
+            <a href="{% url 'post_details' post.slug %}" class="fa-solid fa-arrow-right-long"></a>
+        </div>
+    {% endfor %}
+
+    </div>
+</section>

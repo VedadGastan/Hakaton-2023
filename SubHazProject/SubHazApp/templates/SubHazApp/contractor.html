@@ -1,0 +1,140 @@
+{% extends 'SubHazApp/base/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!--BANNER-->
+
+<section class="banner">
+    <div class="element">
+        {% if contractor.consultant_company == None %}
+        <h3>Independent Consultant</h3>
+        {% else %}
+        <h3>Employee consultant of {{contractor.consultant_company}}</h3>
+        {% endif %}
+        <h1>{{contractor.name}}</h1>
+    </div>
+</section>
+
+
+<!--PROFILE-->
+<section class="profile">
+    <div class="element" id="profile-page">
+        <div class="profile-info">
+            <img src="https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?w=2000" alt="profile">
+            <h2 class="title-h2">My Profile </h2>
+            <h3 class="title-h3">Social Media</h3>
+            <div class="profile-sm">
+                <div class="sm-link"><a href="#" class="fa fa-facebook"></a><a class="adress" href="#">abcd.efg@.com</a></div>
+                <div class="sm-link"><a href="#" class="fa fa-instagram"></a><a class="adress" href="#">abcd.efg@.com</a></div>
+                <div class="sm-link"><a href="#" class="fa fa-linkedin"></a><a class="adress" href="#">abcd.efg@.com</a></div>
+                <div class="sm-link"><a href="#" class="fa fa-twitter"></a><a class="adress" href="#">abcd.efg@.com</a></div>
+            </div>
+        </div>
+        <div class="profile-text">
+            <h3 class="title-h3">Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit, sed do eiusmod tempor</h3>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <br>
+                <br>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                <br>
+                <br>
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                voluptatem.
+                <br>
+                
+            </p>
+            
+            <div class="unavailability">
+                <div class="anchor" id="anchor"></div>
+                <h3 class="title-h3">Availability</h3>
+                <h5 class="title-h5">{{month}} {{year}}</h5>
+                <div class="calendar">
+                    <div class="prev">
+                        <form method='post' action='#anchor'>
+                            {% csrf_token %}
+                            <input id="previous" type="submit" value=" " name="Previous" onclick="change()" class="previous"/>
+                        </form>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                {% for weekday in weekday_list %}
+                                <th>{{weekday}}</th>
+                                {% endfor %}
+                            </tr>
+                            <tr>
+                            {% for day in cal %}
+                                {% if forloop.counter0|divisibleby:7 %}
+                                {{day.0 | safe}}
+                                </tr>
+                                <tr>
+                                {% else %}
+                                {{day.0 | safe}}
+                                {% endif %}
+                            {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="nxt">
+                        <form method='post' action='#anchor'>
+                            {% csrf_token %}
+                            <input id="next" type="submit" value="  "  onclick="change()" name="Next" class="next"/>
+                        </form>
+                    </div>
+                </div>
+                {% if is_consultant %}
+                <div class="add_unavailability"><a href="{% url 'unavailability' %}"><button class="btn_primary">Add when you are busy</button></a></div>
+                {% endif %}
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!--PROJECTS-->
+<section class="myprojects">
+    <div class="element">
+        <h2 class="title-h2">My Projects</h2>
+        <div class="project-container">
+            <div class="project-img"><a href="#"><img src="/static/images/Temp1.jpeg" alt="image"></a></div>
+            <div class="project-text">
+                <a href="#"><h3 class="title-h3">Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit</h3></a>
+                <p class="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <br> nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br> reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+                <a href="#" class="link">LEARN MORE</a>
+            </div>
+        </div>
+        <div class="project-container">
+            <div class="project-img"><a href="#"><img src="/static/images/Temp1.jpeg" alt="image"></a></div>
+            <div class="project-text">
+                <a href="#"><h3 class="title-h3">Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit</h3></a>
+                <p class="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <br> nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br> reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+                <a href="#" class="link">LEARN MORE</a>
+            </div>
+        </div>
+        <div class="button">
+            <button id="submit">SEE MORE PROJECTS</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function change(){
+        y = "  "
+        document.getElementById("next").value += y;
+        document.getElementById("previous").value += y;
+    }
+    
+ </script>
+
+<!--NEWSLETTER-->
+
+{% include "SubHazApp/global/newsletter.html" %}
+
+
+<!--FOOTER-->
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'SubHazApp/base/base-white.html' %}
+{% load static %}
+{% block content %}
+
+{% if form.errors %}
+<p class="text">There was an error with your form...</p>
+{% endif %}
+
+<section class="register">
+    <div class="element-2">
+        
+        <h1 class="title-h1">Sign Up</h1>
+        <div class="form">
+            <form action="#" method="post">
+                {% csrf_token %}
+                {{ form1 }}
+                {{ form2 }}
+                <button class="submit-2" type="submit" name="submit" id="submit">SUBMIT</button>
+            </form>
+        </div>  
+        <p class="text">Already have a account? Try to <a href="{% url 'login' %}"> log in</a></p>
+    </div>
+</section>
+
+{% endblock %}

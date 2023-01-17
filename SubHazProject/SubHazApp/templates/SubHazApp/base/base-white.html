@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vodaj.ba</title>
+    <link href="{% static 'scss/styles.css' %}" type="text/css" rel="stylesheet">
+    <link rel="icon" href="{% static 'images/logo.svg' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/cf6b16748e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="sticky">
+
+            <div><a href="{% url 'home' %}"><div style="display: flex; justify-content: center; align-items: center;"><img class="logo" src="{% static 'images/logo.svg' %}" alt="Logo" width="80"><span id="logo-text" style=" font-family: 'Ubuntu'; margin-left: 20px; font-size: 40px; color: white;">Vodaj</span><span style=" font-family: 'Ubuntu';font-size: 40px; color: #fffa00;">.ba</span></span></div></a> </div>
+
+            <input type="checkbox" id="checkbox" class="checkbox"/>
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="menu-items">
+                    <li>
+                        <a href="{% url 'home' %}"><span>HOME</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>ABOUT US</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>PRODUCT</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>SOLUTIONS</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>RESOURCES</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>GLOBAL HIRING GUIDE</span></a>
+                    </li>
+
+            </nav>
+    </header>
+
+    {% block content %}
+    
+    {% endblock %}
+    <footer class="footer">
+        <div class="element" id="footer-menu-1">
+            <div class="footer-first">
+                <div><a href="#"><img src="{% static 'images/logo-white.svg' %}" alt="logo" width="100"></a></div>
+                <div>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                </div>
+            </div>
+            <div>
+                <nav>
+                    <h5>How it works</h5>
+                    <ul>
+                        <li>
+                            <a href="#"><span>Hire Employees</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Hire Contractor</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Run Global Payroll</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Integration</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Open API</span></a>
+                        </li>
+                </nav>
+            </div>
+            <div>
+                <nav>
+                    <h5>Solutions</h5>
+                    <ul>
+                        <li>
+                            <a href="#"><span>Compliance</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Payments</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>For Finance Teams</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>For Legal Teams</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>For Hiring Managers</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Startup</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Enterprise</span></a>
+                        </li>
+                </nav>
+            </div>
+            <div>
+                <nav>
+                    <h5>Resources</h5>
+                    <ul>
+                        <li>
+                            <a href="#"><span>About</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Blog</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Support hub</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Global Hiring Guide </span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Partner Program</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Affiliates</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Case Studies</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Careers</span></a>
+                        </li>
+                </nav>
+            </div>
+            
+        </div>
+        <div class="element">
+            <hr style="margin-top: 60px;">
+        </div>
+        <div class="element">
+            <div class="flex-5">
+                <div class="copyright"><span>© Copyright 2023. All Rights Reserved.</span></div>
+                <div>
+                    <nav class="footer-menu-2">
+                        <ul>
+                            <li><a href="#"><span>Disclaimer</span></a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#"><span>Privacy Policy</span></a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#"><span>Terms of Service</span></a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#"><span>Cookie Policy</span></a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#"><span>Cookie Settings</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
+    </html>
+    

@@ -1,0 +1,170 @@
+{% extends 'SubHazApp/base/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!--HERO SECTION-->
+
+<section class="banner" id="hero">
+    <div class="element">
+        <h3>Everything for and about your dog in one place</h3>
+        <h1 style="padding-bottom: 50px;">Welcome to <span style="color: #fffa00;">vodaj.ba</span></h1>
+        <p style="padding-bottom: 75px;">Need a dog sitter or walker? Search through our many <br> members to take care of your beloved dog!</p>
+        <div class="services">
+            <div id="sign-up" class="btn-secondary"><a href="#">Search</a></div>
+        </div>
+        
+    </div>
+    </section>
+    
+
+<!--COMPANIES LIST-->
+
+<section class="companies">
+    <div class="element">
+        <h2 class="title-h2">Our website is promoting eco-fiendly and bio products</h2>
+        <p class="text">The pet shop that we are promoting are eco friendly because they sell only environmentally friendly products. <br> The products are made without harmful chemicals, and are made from natural materials.</p>
+        <div class="companies-img">
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="dropbox" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="shopify" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="intercom" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="dlocal" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="alan" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="notion" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="airtable" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="mercury" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="superhuman" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="voi" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="spendesk" width="150" height="50"></a>
+            <a href="#"><img src="{% static 'images/temp.jpg' %}" alt="andela" width="150" height="50"></a>
+        </div>
+    </div>
+</section>
+
+
+<!--ZIG ZAG-->
+
+<section>
+    <div class="zig-zag">        
+        <div class="abs-bg" id="right"><div class="overlay-1"></div></div>
+        <div class="element" id="zig-zag">
+            <div>
+                <!--    Ovo je prvi zig zag opis    -->
+                <h2 class="title-h2">Something about our<br> dog walkers</h2>
+                <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <a class="link" href="#">Learn more</a>   
+            </div>
+            <div class="img-zig-zag">
+                <img src="{% static 'images/walker1.jpg' %}" alt="image">
+            </div>
+        </div>
+    </div>
+    <div class="zig-zag" id="zig-zag-pc">
+        <div class="abs-bg" id="left"><div class="overlay-2"></div></div>        
+        <div class="element" id="zig-zag">
+            <div class="img-zig-zag">
+                <img src="{% static 'images/walker2.jpg' %}" alt="image">
+            </div>
+            <div>
+                <h2 class="title-h2">Something about our<br> dog walkers</h2>
+                <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <a class="link" href="#">Learn more</a>
+            </div>
+            
+        </div>
+    </div>
+    <!--    MOBILE    -->
+
+    <div id="zig-zag-mobile" class="zig-zag">
+        <div class="abs-bg" id="right"><div class="overlay-2"></div></div>        
+        <div class="element" id="zig-zag">
+            <div>
+                <h2 class="title-h2">Something about our<br> dog sitters</h2>
+                <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <a class="link" href="#">Learn more</a>
+            </div>
+            <div class="img-zig-zag">
+                <img src="{% static 'images/walker1.jpg' %}" alt="image">
+            </div>
+        </div>
+    </div>
+
+    <!--  END  MOBILE    -->
+
+    <div id="last" class="zig-zag">
+        <div class="abs-bg" id="right"><div class="overlay-3"></div></div>
+        <div class="element" id="zig-zag">
+            <div>
+                <h2 class="title-h2">We provide people<br> who will take great<br>care of your dogs!</h2>
+                
+            </div>
+            <div  class="img-zig-zag">
+                <img src="{% static 'images/walker3.jpg' %}" alt="image">
+            </div>
+        </div>
+    </div>    
+</section>
+
+
+
+
+
+
+
+<!--DO IT ALL-->
+
+<section class="do-it-all">
+    <div class="element" id="do-it-all">
+        <h2 class="title-h2">These are some of our TOP members:</h2>
+        
+        <div class="offer-1">
+            <div class="v-container"><a href="#">
+                <img src="{% static 'images/temp.jpg' %}" alt="image">
+                <p>Lorem ipsum dolor sit amet, consectetur</p></a>
+            </div>
+            <div class="v-container"><a href="#">
+                <img src="{% static 'images/temp.jpg' %}" alt="image">
+                <p>Lorem ipsum dolor sit amet, consectetur</p></a>
+            </div>
+            <div class="v-container"><a href="#">
+                <img src="{% static 'images/temp.jpg' %}" alt="image">
+                <p>Lorem ipsum dolor sit amet, consectetur</p></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="demo">
+<div class="overlay-5">
+    <h2>Want to become a member of our comunity?</h2>
+    <div class="btn-secondary" id="demo-btn"><a href="#">Apply here</a></div>
+    
+</div>
+</section>
+
+<!--LEGAL-->
+
+<section class="legal">
+    <div class="element">
+        <div class="flex-1">
+            <div style="min-width:260px ;">
+                <h4>Finance <br><br> Hiring Managers</h4>
+                <h3>Legal teams</h3>
+            </div>
+            <div class="container-1">
+                <div>
+                    <img src="{% static 'images/temp.jpg' %}" alt="image">
+                </div>
+                <div>
+                    <h4>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit</h4>
+                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut <br> enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                    <a class="link" href="#">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--FOTTER-->
+
+{% endblock %}

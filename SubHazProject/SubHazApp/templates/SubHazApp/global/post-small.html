@@ -1,0 +1,13 @@
+{% load static %}
+<section class="blog-small">
+    <h2 class="title-h2">Other Post</h2>
+    <div class="element">
+        {% for post in posts.all|slice:"0:4" %}
+            <div class="post-small">
+                <a href="{% url 'post_details' post.slug %}"><img src="{{ post.image.url }}" alt="{{post.title}}"></a>
+                <a href="{% url 'post_details' post.slug %}"><h5 class="post-title-small">{{post.title}}</h5></a>
+                <p class="post-excerpt">{{post.created_on}}</p>
+            </div>
+        {% endfor %}  
+    </div>
+</section>

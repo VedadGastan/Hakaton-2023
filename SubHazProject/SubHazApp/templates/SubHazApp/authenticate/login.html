@@ -1,0 +1,42 @@
+{% extends 'SubHazApp/base/base-white.html' %}
+{% load static %}
+{% block content %}
+
+
+{% if not consultant_check %}
+<section class="login">
+    <div class="element-2">
+        <h1 class="title-h1">Login</h1>
+        <div class="form">
+            <form action="#" method="post">
+                {% csrf_token %}
+                <input id="username" type="text" name="username" placeholder="Username, full name if you dont have a username" required> <br>
+                <input id="password" type="password" name="password" placeholder="Password" required> <br>
+                <select name="profile_type" id="type" required>
+                    <option value="none" selected disabled hidden>Select an Option</option>
+                    <option value="consultant">Consultant</option>
+                    <option value="non-consultant">Non-Consultant</option>
+                </select>
+                <button class="submit-2" type="submit" name="submit" id="submit">SUBMIT</button>
+            </form>
+        </div> 
+        <p class="text">Don't have a account? Try to <a href="{% url 'register' %}"> sign up</a></p>
+    </div>
+    
+</section>
+{% else %}
+<section class="id_check">
+    <div class="element-2">
+        <h1 class="title-h1">Are you:</h1>
+        <h5 class="title-h5">{{username}}</h5>
+        <h5 class="title-h5">Phone nuber: {{phone}}</h5>
+        <div class="form">
+            <a href="{% url 'register' %}"><button class="submit-2" name="submit" id="submit">Yes</button></a>
+            <a href="{% url 'login' %}"><button class="submit-2 no" name="submit" id="submit">No</button></a>
+        </div> 
+        <p class="text">Don't have a account? Try to <a href="{% url 'register' %}"> sign up</a></p>
+    </div>
+
+</section>
+{% endif %}
+{% endblock %}

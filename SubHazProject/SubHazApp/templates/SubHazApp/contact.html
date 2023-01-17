@@ -1,0 +1,81 @@
+{% extends 'SubHazApp/base/base.html' %}
+{% load static %}
+{% block content %}
+
+<!--BANNER-->
+
+<section class="banner">
+    <div class="element">
+        <h1>Contact Us</h1>
+    </div>
+</section>
+
+
+<!--MESSAGE US-->
+
+<section class="message-us">
+    <div class="element" id="contact">
+        <div class="input">
+            <h2 class="title-h2">Message Us</h2>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+            <div class="form">
+                <form action="#" method="post">
+                    <input id="fname" type="text" name="fname" placeholder="First name">
+                    <input id="lname" type="text" name="lname" placeholder="Last name"> <br>
+                    <input id="phone" type="tel" name="phone" placeholder="Phone number"> <br>
+                    <input id="email-2" type="emial" name="emial" placeholder="Email adress"> <br>
+                    <textarea id="txtArea" rows="6 " placeholder="Enter your email"></textarea>  <br>
+                    <button class="submit-2" type="submit" name="submit" id="submit">SUBMIT</button>
+                </form>
+            </div>  
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77935.71780086285!2d9.691260736499396!3d52.37964560050579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b00b514d494f85%3A0x425ac6d94ac4720!2sHanover%2C%20Germany!5e0!3m2!1sen!2sba!4v1668456558646!5m2!1sen!2sba" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="bg-block"></div>
+    </div>
+
+</section>
+
+
+<!--CONTACT INFO-->
+
+<section class="contact-info">
+    <div class="element">
+        <h2 class="title-h2">Contact Information</h2>
+        <div class="c-info">
+            <div class="items-1">
+                <div class="contact-img">
+                    <img src="{% static 'images/email.png' %}" alt="email">
+                </div>
+                <div class="contact-text">
+                    <h5 class="title-h5">Email Adress</h5>
+                    <p class="text">subhaz@gmail.com</p>
+                </div>
+            </div>  
+            <div class="items-1">
+                <div class="contact-img">
+                    <img src="{% static 'images/phone.png' %}" alt="phone">
+                </div>
+                <div class="contact-text">
+                    <h5 class="title-h5">Email Adress</h5>
+                    <p class="text">00-0000-000</p>
+                </div>
+            </div>  
+            <div class="items-1">
+                <div class="contact-img">
+                    <img src="{% static 'images/location.png' %}" alt="location">
+                </div>
+                <div class="contact-text">
+                    <h5 class="title-h5">Location</h5>
+                    <p class="text">subhaz@gmail.com</p>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section>
+
+
+<!--FOOTER-->
+
+{% endblock %}
