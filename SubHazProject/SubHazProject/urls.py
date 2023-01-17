@@ -24,29 +24,23 @@ urlpatterns = [
     path('', index, name='home'),
     path('about/', about, name='about'),
     path('contact/', contact, name='contact'),
-    path('client/', client, name='client'),
 
-    path('consultant/<str:name>/', contractor, name='contractor'),
-    path('consultants/', contractors, name='contractors'),
+    path('member/<str:name>/', contractor, name='contractor'),
+    path('members/', contractors, name='contractors'),
 
     path('work/', work, name='work'),
 
     path('search/', search, name='search'),
 
-    path('unavailability/', unavailability, name='unavailability'),
-    path('choice/', choice, name='choice'),
+    
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
     path('register/', register_user, name='register'),
-    path('register-consultant/', register_consultant, name='register_consultant'),
-    path('register-company/', register_company, name='register_company'),
-    path('certificate/', certificate, name='certificate'),
+
 
     path('blog/', blog, name='blog'),
     path('posts/<slug:slug>/', post_details, name='post_details'),
 
 
-    path('job-offers/', job_offers, name='job-offers'),
-	path('uploadfile/', upload_file, name='upload-file'),
     path('tinymce/', include('tinymce.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

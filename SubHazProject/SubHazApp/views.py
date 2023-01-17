@@ -37,7 +37,7 @@ def search(request):
         searched = request.POST.get('searched')
         searched_region = request.POST.get('searched_region')
         searched_district = request.POST.get('searched_district')
-        certificates = Certificate.objects.filter(certificate_type__contains=searched)
+        certificates = Profile.objects.filter(certificate_type__contains=searched)
         for cert in certificates:
             if cert.consultant_Id.region == searched_region and cert.consultant_Id.district == searched_district and cert.status==1:
                 results.append(cert)
@@ -120,77 +120,6 @@ def register_user(request):
     return render(request, 'SubHazApp/authenticate/register.html', {'form1':form1, 'form2':form2, })
 
 
-def register_consultant(request):
-    
-    range_one = rate_range
-    range_list=[]
-    for i in range_one:
-        range_list.append(i[0])
-
-    current_user = request.user
-    company_list=[]
-    temp=[]
-    company_dict=Company.objects.values('name')
-    for item in company_dict:
-        for key in item:
-            temp.append(item[key])
-    for i in temp:
-        if i not in company_list:
-            company_list.append(i)
-    
-    regions = []
-    for key, value in regions_dictionary.items():
-        regions.append(key)
-
-    if current_user.is_authenticated and Profile.objects.get(user=current_user).profile_type=="Consultant":
-        if request.method == "POST":
-            region = request.POST.get('region')
-            district = request.POST.get('district')
-            rate = request.POST.get('rate')
-            company = request.POST.get('company')
-
-            if Company.objects.filter(name=company).exists():
-                cmpny = Company.objects.get(name=company)
-            else:
-                cmpny = None
-            phone_nmr = Profile.objects.get(user=current_user).phone_number
-
-            consultant = Consultant(user_id = current_user, consultant_company = cmpny, region = region, district = district, rate_range = rate, name = str(current_user.first_name) + " " + str(current_user.last_name), phone_number = phone_nmr)
-            consultant.save()
-            return redirect('certificate')
-        else:
-            return render(request, 'SubHazApp/authenticate/register_consultant.html', {'range_list':range_list, 'company_list':company_list, 'certificate_types':certificate_types, 'regions_dictionary':regions_dictionary, 'regions':regions, })
-    else:
-        messages.success(request, ("You need to register a consultant profile first!"))
-        return redirect('register')
-
-
-def register_company(request):
-    current_user = request.user
-    if current_user.is_authenticated and Consultant.objects.filter(user_id=current_user).exists():
-        if request.method == "POST":
-            name = request.POST.get('name')
-            address = request.POST.get('address')
-            phone = request.POST.get('phone')
-            fein = request.POST.get('fein')
-            auth = Consultant.objects.get(user_id=current_user)
-
-            company = Company(name=name, phone_number=phone,address=address,FEIN=fein, auth_consultant=auth)
-            company.save()
-
-            auth.consultant_company = company
-            auth.save()
-
-            messages.success(request, ("You have successfully registered your company!"))
-            return redirect('home')
-
-        else:
-            return render(request, 'SubHazApp/authenticate/register_company.html')
-    else:
-        messages.success(request, ("You need to register a consultant profile first!"))
-        return redirect('register')
-
-
 
 def unavailability(request):
     current_user = request.user
@@ -213,43 +142,6 @@ def unavailability(request):
     else:
         messages.success(request, ("You need to login first"))
         return redirect('login')
-
-def choice(request):
-    return render(request, 'SubHazApp/authenticate/choice.html')
-
-def certificate(request):
-    current_user = request.user
-    if current_user.is_authenticated and Consultant.objects.filter(user_id=current_user).exists():
-        certificate_list = certificate_types
-        certificate_list_len = len(certificate_list)
-        length = 1
-        if request.method == "POST":
-            consultant = Consultant.objects.get(user_id=current_user)
-            for number in range(1, 100):
-                string = "certificate"+str(number)
-                if request.POST.get(string) is not None:
-                    length = number
-
-            for cert in range(1, length+1):
-                string1 = 'certificate'+str(cert)
-                string2 = 'expiration_date'+str(cert)
-                string3 = 'image'+str(cert)
-
-                certificate_type = request.POST.get(string1)
-                expiration_date = request.POST.get(string2)
-                image = request.FILES.get(string3)
-
-                certificate = Certificate(consultant_Id=consultant, certificate_type=certificate_type, expiration_date=expiration_date, image=image)
-                certificate.save()
-
-            messages.success(request, ("We are now validating your profile."))
-            return redirect('home')
-        else:
-            return render(request, 'SubHazApp/authenticate/certificate.html', {'certificate_list':certificate_list, 'certificate_list_len':certificate_list_len, })
-    else:
-        messages.success(request, ("You need to register a consultant profile first!"))
-        return redirect('register')
-
 
 def index(request):
     return render(request, 'SubHazApp/index.html')
@@ -349,60 +241,3 @@ def post_details(request, slug):
     posts = Post.objects.all()
     post = Post.objects.get(slug=slug)
     return render(request, 'SubHazApp/blog-inner.html', {'post':post, 'posts':posts})
-
-def upload_file(request):
-	if "GET" == request.method:
-		return render(request, 'SubHazApp/uploadfile.html', {})
-	else:
-		Certificate.objects.all().delete()
-		Company.objects.all().delete()
-		Consultant.objects.all().delete()
-		excel_file = request.FILES["excel_file"]
-
-        # you may put validations here to check extension or file size
-
-		wb = openpyxl.load_workbook(excel_file)
-
-        # getting a particular sheet by name out of many sheets
-		worksheet = wb["Sheet1"]
-		print(worksheet)
-
-		excel_data = list()
-        # iterating over the rows and
-        # getting value from each cell in row
-		for row in worksheet.iter_rows():
-			row_data = list()
-			for cell in row:
-				row_data.append(str(cell.value))
-			excel_data.append(row_data)
-		#adding  to db
-		for row in excel_data:
-			# skip empty recorrds
-			if row[1] =="None" or row[1] == "Last name":
-				continue
-			# if is affiliated
-			isaffiliated = False
-			if row[3] != "None":
-				company_name = row[3]
-				if Company.objects.filter(name = company_name).exists():
-					company = Company.objects.get(name = company_name)
-				else:
-					company = Company.objects.create(name = company_name)
-					company.save
-				isaffiliated = True
-			first_name = row[2]
-			last_name = row[1]
-			name = first_name + " " + last_name
-			certificate_type = row[0]
-			city = row[4]
-			telephone = row[5]
-			if Consultant.objects.filter(name = name, phone_number = telephone).exists():
-				continue
-			consultant = Consultant.objects.create(name = name, phone_number = telephone, region = city)
-			consultant.save
-			if isaffiliated:
-				consultant.consultant_company = company
-			certificate = Certificate.objects.create(certificate_type = certificate_type, consultant_Id = consultant, expiration_date = datetime.datetime(2023, 5, 17))
-			certificate.save
-
-		return render(request, 'SubHazApp/uploadfile.html', {"excel_data":excel_data})

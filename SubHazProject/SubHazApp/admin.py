@@ -28,7 +28,3 @@ admin.site.register(Category)
 admin.site.register(Post, PostAdmin)
 admin.site.register(Profile)
 
-admin.site.register(Consultant)
-admin.site.register(Company)
-admin.site.register(Certificate)
-admin.site.register(Unavailability)
