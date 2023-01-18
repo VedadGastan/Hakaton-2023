@@ -298,7 +298,7 @@ header.logo {
   justify-content: center;
   -moz-column-gap: 200px;
   column-gap: 200px;
-  padding: 150px 0px;
+  padding: 100px 0px;
 }
 
 .zig-zag {
@@ -320,6 +320,10 @@ header.logo {
 .zig-zag p {
   margin-bottom: 60px;
 }
+.zig-zag h4 {
+  font-size: 22px;
+  margin-top: 20px;
+}
 
 #right {
   right: 40px !important;
@@ -335,8 +339,6 @@ header.logo {
   top: auto;
   bottom: auto;
   z-index: -100;
-  width: 540px;
-  height: 690px;
   box-shadow: none !important;
   overflow: hidden;
   border-radius: 30px;
@@ -346,7 +348,7 @@ header.logo {
   bottom: auto;
   z-index: -100;
   width: 435px;
-  height: 690px;
+  height: 600px;
   box-shadow: none !important;
   overflow: hidden;
   border-radius: 30px;
@@ -471,8 +473,12 @@ header.logo {
 }
 
 .legal {
-  padding-top: 160px;
+  position: relative;
   padding-bottom: 140px;
+}
+.legal #anchor {
+  position: absolute;
+  top: -150px;
 }
 .legal h4 {
   font-size: 26px;
@@ -482,6 +488,7 @@ header.logo {
   font-size: 40px;
   font-weight: 900;
   color: #f2ee03;
+  margin-bottom: 30px;
 }
 .legal h2 {
   margin-bottom: 75px;
@@ -508,11 +515,12 @@ header.logo {
   -moz-box-shadow: 10px 10px 36px -17px rgba(0, 0, 0, 0.55);
   overflow: hidden;
   min-width: 60vw;
+  padding-inline: 100px;
+  padding-block: 40px;
 }
 .container-1 img {
   display: block;
-  width: 395px;
-  height: 450px;
+  width: 350px;
   -o-object-fit: contain;
   object-fit: contain;
   margin-top: 0;
@@ -567,11 +575,11 @@ header.logo {
 
 #do-it-all {
   text-align: center;
-  margin-bottom: 140px;
+  margin-bottom: 120px;
 }
 
 .do-it-all h2 {
-  margin-bottom: 35px;
+  margin-bottom: 60px;
 }
 .do-it-all .text {
   margin-bottom: 60px;
@@ -592,14 +600,19 @@ header.logo {
   -webkit-box-shadow: 10px 10px 36px -17px rgba(0, 0, 0, 0.55);
   -moz-box-shadow: 10px 10px 36px -17px rgba(0, 0, 0, 0.55);
 }
+.v-container h5 {
+  margin-top: 20px;
+  font-size: 24px;
+}
 .v-container img {
   height: 390px;
   -o-object-fit: cover;
+  width: 100%;
   object-fit: cover;
-  border-radius: 0px;
+  border-radius: 30px;
 }
 .v-container p {
-  font-size: 22px;
+  font-size: 18px;
   padding: 30px 40px;
   color: #4a4e54;
   transition: 0.3s;
@@ -764,7 +777,7 @@ textarea {
 
 #submit {
   padding: 15px 55px;
-  background-color: #306fea;
+  background-color: #f2ee03;
   border: none;
   border-radius: 30px;
   color: white;
@@ -774,7 +787,7 @@ textarea {
   font-weight: 900;
 }
 #submit:hover {
-  background-color: #173574;
+  background-color: #c0bd00;
 }
 
 #fname {
@@ -1071,6 +1084,7 @@ textarea {
   height: auto;
   padding: 15px 0;
   background-color: transparent;
+  color: white;
 }
 .search button {
   position: absolute;
@@ -1080,7 +1094,7 @@ textarea {
   font-size: 16px;
   font-weight: 900;
   color: white;
-  background-color: #306fea;
+  background-color: #f2ee03;
   border: none;
   cursor: pointer;
   transition: 0.3s;
@@ -1098,10 +1112,10 @@ textarea {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 1px solid #878889;
+  border: 1px solid #f2ee03;
   border-radius: 30px;
   padding: 0px 25px;
-  color: #6a6c70;
+  color: white;
   width: 30%;
   position: relative;
   background-color: transparent;
@@ -1337,6 +1351,7 @@ textarea {
 .footer ul li a {
   text-decoration: none;
   line-height: 2em;
+  color: white;
 }
 
 #footer-menu-1 {
@@ -1504,8 +1519,9 @@ textarea {
   row-gap: 50px;
 }
 .work .work-grid h3 {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   margin-top: 10px;
+  color: #f2ee03;
 }
 .work .work-grid img {
   width: 100%;
@@ -1675,6 +1691,9 @@ textarea {
   padding-inline: 200px;
   padding-block: 50px;
 }
+.login .element-2 .title-h1 {
+  color: #f2ee03;
+}
 .login .element-2 form {
   margin-top: 30px;
 }
@@ -1694,7 +1713,7 @@ textarea {
   width: 100%;
 }
 .login .element-2 .text a {
-  color: #306fea;
+  color: #f2ee03;
 }
 
 .register {
@@ -1717,6 +1736,10 @@ textarea {
   padding: 30px;
 }
 .register .element-2 form input {
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.register .element-2 form textarea {
   margin-top: 8px;
   margin-bottom: 20px;
 }
@@ -1743,7 +1766,10 @@ textarea {
   display: none;
 }
 .register .element-2 .text a {
-  color: #306fea;
+  color: #f2ee03;
+}
+.register .element-2 .title-h1 {
+  color: #f2ee03;
 }
 
 .id_check {

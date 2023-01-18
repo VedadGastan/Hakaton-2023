@@ -291,7 +291,7 @@ header.logo {
 	justify-content: center;
 	-moz-column-gap: 200px;
 	column-gap: 200px;
-	padding: 150px 0px;
+	padding: 100px 0px;
 }
 .zig-zag {
 	position: relative;
@@ -311,6 +311,10 @@ header.logo {
 	p {
 		margin-bottom: 60px;
 	}
+	h4{
+		font-size: 22px;
+		margin-top: 20px;
+	}
 }
 #right {
 	right: 40px !important;
@@ -324,8 +328,6 @@ header.logo {
 	top: auto;
 	bottom: auto;
 	z-index: -100;
-	width: 540px;
-	height: 690px;
 	box-shadow: none !important;
 	overflow: hidden;
 	border-radius: 30px;
@@ -335,7 +337,7 @@ header.logo {
 	bottom: auto;
 	z-index: -100;
 	width: 435px;
-	height: 690px;
+	height: 600px;
 	box-shadow: none !important;
 	overflow: hidden;
 	border-radius: 30px;
@@ -446,7 +448,11 @@ header.logo {
 	column-gap: 170px;
 }
 .legal {
-	padding-top: 160px;
+	position: relative;
+	#anchor{
+		position: absolute;
+		top: -150px;
+	}
 	padding-bottom: 140px;
 	h4 {
 		font-size: 26px;
@@ -456,6 +462,7 @@ header.logo {
 		font-size: 40px;
 		font-weight: 900;
 		color: #f2ee03;
+		margin-bottom: 30px;
 	}
 	h2 {
 		margin-bottom: 75px;
@@ -481,10 +488,11 @@ header.logo {
 	-moz-box-shadow: 10px 10px 36px -17px rgba(0, 0, 0, 0.55);
 	overflow: hidden;
 	min-width: 60vw;
+	padding-inline: 100px;
+	padding-block: 40px;
 	img {
 		display: block;
-		width: 395px;
-		height: 450px;
+		width: 350px;
 		-o-object-fit: contain;
 		object-fit: contain;
 		margin-top: 0;
@@ -535,11 +543,11 @@ header.logo {
 }
 #do-it-all {
 	text-align: center;
-	margin-bottom: 140px;
+	margin-bottom: 120px;
 }
 .do-it-all {
 	h2 {
-		margin-bottom: 35px;
+		margin-bottom: 60px;
 	}
 	.text {
 		margin-bottom: 60px;
@@ -558,14 +566,19 @@ header.logo {
 	box-shadow: 10px 10px 36px -17px rgba(0, 0, 0, 0.55);
 	-webkit-box-shadow: 10px 10px 36px -17px rgba(0, 0, 0, 0.55);
 	-moz-box-shadow: 10px 10px 36px -17px rgba(0, 0, 0, 0.55);
+	h5{
+		margin-top: 20px;
+		font-size: 24px
+	}
 	img {
 		height: 390px;
 		-o-object-fit: cover;
+		width: 100%;
 		object-fit: cover;
-		border-radius: 0px;
+		border-radius: 30px;
 	}
 	p {
-		font-size: 22px;
+		font-size: 18px;
 		padding: 30px 40px;
 		color: #4a4e54;
 		transition: 0.3s;
@@ -718,7 +731,7 @@ textarea {
 }
 #submit {
 	padding: 15px 55px;
-	background-color: #306fea;
+	background-color: #f2ee03;
 	border: none;
 	border-radius: 30px;
 	color: white;
@@ -727,7 +740,7 @@ textarea {
 	transition: 0.3s;
 	font-weight: 900;
 	&:hover {
-		background-color: #173574;
+		background-color: #c0bd00;
 	}
 }
 #fname {
@@ -999,6 +1012,7 @@ textarea {
 	justify-content: center;
 	margin-top: 180px;
 	margin-bottom: 115px;
+
 	input {
 		border: none;
 		font-size: 16px;
@@ -1006,6 +1020,7 @@ textarea {
 		height: auto;
 		padding: 15px 0;
 		background-color: transparent;
+		color: white;
 	}
 	button {
 		position: absolute;
@@ -1015,7 +1030,7 @@ textarea {
 		font-size: 16px;
 		font-weight: 900;
 		color: white;
-		background-color: #306fea;
+		background-color: #f2ee03;
 		border: none;
 		cursor: pointer;
 		transition: 0.3s;
@@ -1033,10 +1048,10 @@ textarea {
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	border: 1px solid #878889;
+	border: 1px solid #f2ee03;
 	border-radius: 30px;
 	padding: 0px 25px;
-	color: #6a6c70;
+	color: white;
 	width: 30%;
 	position: relative;
 	background-color: transparent;
@@ -1269,6 +1284,7 @@ textarea {
 			a {
 				text-decoration: none;
 				line-height: 2em;
+				color: white;
 			}
 		}
 	}
@@ -1429,8 +1445,9 @@ textarea {
 		grid-template-columns: repeat(4, 1fr);
 		row-gap: 50px;
 		h3 {
-			margin-bottom: 25px;
+			margin-bottom: 15px;
 			margin-top: 10px;
+			color: #f2ee03;
 		}
 		img {
 			width: 100%;
@@ -1599,6 +1616,7 @@ textarea {
 		margin-bottom: 120px;
 	}
 }
+
 .login {
 	text-align: center;
 	.element-2 {
@@ -1607,6 +1625,9 @@ textarea {
 		border-radius: 30px;
 		padding-inline: 200px;
 		padding-block: 50px;
+		.title-h1{
+			color: #f2ee03;
+		}
 		form {
 			margin-top: 30px;
 			input {
@@ -1627,7 +1648,7 @@ textarea {
 		}
 		.text {
 			a {
-				color: #306fea;
+				color: #f2ee03;
 			}
 		}
 	}
@@ -1652,6 +1673,10 @@ textarea {
 				margin-top: 8px;
 				margin-bottom: 20px;
 			}
+			textarea {
+				margin-top: 8px;
+				margin-bottom: 20px;
+			}
 			select {
 				margin-top: 8px;
 				margin-bottom: 20px;
@@ -1671,14 +1696,18 @@ textarea {
 				margin-top: 0;
 				text-align: left;
 			}
+			
 		}
 		.helptext {
 			display: none;
 		}
 		.text {
 			a {
-				color: #306fea;
+				color: #f2ee03;
 			}
+		}
+		.title-h1{
+			color: #f2ee03;
 		}
 	}
 }

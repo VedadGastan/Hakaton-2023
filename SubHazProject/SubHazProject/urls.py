@@ -22,13 +22,9 @@ from SubHazApp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='home'),
-    path('about/', about, name='about'),
-    path('contact/', contact, name='contact'),
+    path('subscriptions', about, name='about'),
 
-    path('member/<str:name>/', contractor, name='contractor'),
     path('members/', contractors, name='contractors'),
-
-    path('work/', work, name='work'),
 
     path('search/', search, name='search'),
 
@@ -42,5 +38,4 @@ urlpatterns = [
     path('posts/<slug:slug>/', post_details, name='post_details'),
 
 
-    path('tinymce/', include('tinymce.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

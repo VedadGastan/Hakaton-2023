@@ -43,24 +43,31 @@
             <nav class="navbar">
                 <ul class="menu-items">
                     <li>
-                        <a href="./index.html"><span>HOME</span></a>
+                        <a href="{% url 'home' %}"><span>HOME</span></a>
                     </li>
                     <li>
-                        <a href="#"><span>ABOUT US</span></a>
+                        <a href="{% url 'home' %}"><span>ABOUT US</span></a>
                     </li>
                     <li>
-                        <a href="#"><span>OUR MEMBERS</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><span>DOG TRAINING</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><span>SEARCH BAR</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><span>SIGN UP</span></a>
+                        <a href="{% url 'contractors' %}"><span>OUR MEMBERS</span></a>
                     </li>
 
+                    <li>
+                        <a href="{% url 'search' %}"><span>SEARCH BAR</span></a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'logout' %}"><span>LOGOUT</span></a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}"><span>LOGIN</span></a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="{% url 'about' %}"><span>SIGN UP</span></a>
+                    </li>
+                </ul>
             </nav>
     </header>
 
@@ -70,89 +77,59 @@
     <footer class="footer">
         <div class="element" id="footer-menu-1">
             <div class="footer-first">
-                <div><a href="#"><img src="{% static 'images/logo-white.svg' %}" alt="logo" width="100"></a></div>
+                <div><a href="#"><img src="{% static 'images/logo-white.svg' %}" alt="logo" width="100" ></a></div>
                 <div>
                     <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="https://www.instagram.com/vodaj.ba/" target="_blank" class="fa fa-instagram"></a>
                     <a href="#" class="fa fa-linkedin"></a>
                     <a href="#" class="fa fa-twitter"></a>
                 </div>
             </div>
             <div>
                 <nav>
-                    <h5>How it works</h5>
+                    <h5>Become a member</h5>
                     <ul>
                         <li>
-                            <a href="#"><span>Hire Employees</span></a>
+                            <a href="#"><span>Guide lines</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>Hire Contractor</span></a>
+                            <a href="#"><span>Registration form</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>Run Global Payroll</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>Integration</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>Open API</span></a>
+                            <a href="#"><span>Rules for members</span></a>
                         </li>
                 </nav>
             </div>
             <div>
                 <nav>
-                    <h5>Solutions</h5>
+                    <h5>Our <br> services</h5>
                     <ul>
                         <li>
-                            <a href="#"><span>Compliance</span></a>
+                            <a href="#"><span>Dog sitting</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Dog walking</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>Dog training</span></a>
                         </li>
                         <li>
                             <a href="#"><span>Payments</span></a>
                         </li>
-                        <li>
-                            <a href="#"><span>For Finance Teams</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>For Legal Teams</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>For Hiring Managers</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>Startup</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>Enterprise</span></a>
-                        </li>
                 </nav>
             </div>
             <div>
                 <nav>
-                    <h5>Resources</h5>
+                    <h5>Eco-friendly petshops</h5>
                     <ul>
                         <li>
-                            <a href="#"><span>About</span></a>
+                            <a href="https://www.facebook.com/petzone.ba/" target="_blank">Pet zone</a>
                         </li>
                         <li>
-                            <a href="#"><span>Blog</span></a>
+                            <a href="https://www.thegreenpetshop.com/" target="_blank">The Green pet shop</a>
                         </li>
                         <li>
-                            <a href="#"><span>Support hub</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>Global Hiring Guide </span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>Partner Program</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>Affiliates</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>Case Studies</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>Careers</span></a>
+                            <a href="https://www.zoocentar.com/" target="_blank">Zoo centar</a>
                         </li>
                 </nav>
             </div>
@@ -188,4 +165,3 @@
     </footer>
     </body>
     </html>
-    

@@ -4,57 +4,41 @@
 
 <section class="banner work-banner">
     <div class="element">
-        <h2 class="title-h2">Lorem ipsum dolor sit amet, consectetur
-           <br> adipisicing elit.</h2>
+        <h2 class="title-h2" style="color: white">Search through our members to find <br> the best one that suits your needs</h2>
         <div class="search search-2">
-            <form id="search" action="#">
+            <form id="search" action="#" method="POST">
+                {% csrf_token %}
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" name="search" placeholder="Search by topic or keywords">
+                <input type="text" name="searched" placeholder="Search by city of interest">
                 <button type="submit" name="submit">SEARCH</button>
             </form>
         </div>
-        <div class="keywords">
-            <span class="popular-word text">Popular:</span>
-            <a href="#" class="keyword text"><span >Chemical</span></a>
-            <a href="#" class="keyword text"><span>Experimental</span></a>
-            <a href="#" class="keyword text"><span>Doctor</span></a>
-        </div>
+
     </div>
 </section>
 
 
 <section class="work">
     <div class="element">
-        <h2 class="title-h2">SUBHAZ 1</h2>
+        <h2 class="title-h2" align="center">Search results:</h2>
+        {% if searched %}
         <div class="work-grid">
-            <a href="#"><div class="work-display">
-                <img src="https://www.theladders.com/wp-content/uploads/stress-work-191008-800x450.jpg" alt="img">
-                <h3 class="title-h3">Work 1</h3>
-                <p class="text">Lorem ipsum dolor sit amet</p>
-            </div></a>
-            <a href="#"><div class="work-display">
-                <img src="https://www.theladders.com/wp-content/uploads/stress-work-191008-800x450.jpg" alt="img">
-                <h3 class="title-h3">Work 1</h3>
-                <p class="text">Lorem ipsum dolor sit amet</p>
-            </div></a>
-            <a href="#"><div class="work-display">
-                <img src="https://www.theladders.com/wp-content/uploads/stress-work-191008-800x450.jpg" alt="img">
-                <h3 class="title-h3">Work 1</h3>
-                <p class="text">Lorem ipsum dolor sit amet</p>
-            </div></a>
-            <a href="#"><div class="work-display">
-                <img src="https://www.theladders.com/wp-content/uploads/stress-work-191008-800x450.jpg" alt="img">
-                <h3 class="title-h3">Work 1</h3>
-                <p class="text">Lorem ipsum dolor sit amet</p>
-            </div></a>
+            {% for result in results %}
+                <a href="#"><div class="work-display">
+                    <img src="{{result.image.url}}" alt="img">
+                    <h3 class="title-h3">{{result.user.first_name}} {{result.user.last_name}}</h3>
+                    <p class="text">{{result.description}}</p>
+                    <p class="text" style="margin-top: 15px;">{{result.phone_number}}</p>
+                </div></a>
+            {% empty %}
+                <h1 class="title-h1">There are no current members in your town</h1>
+            {% endfor %}
         </div>
+        {% endif %}
         
     </div>
     
 </section>
 
-<!--NEWSLETTER-->
-
-{% include "SubHazApp/global/newsletter.html" %}
 
 {% endblock %}

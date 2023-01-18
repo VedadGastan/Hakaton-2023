@@ -14,7 +14,30 @@
             <form action="#" method="post">
                 {% csrf_token %}
                 {{ form1 }}
-                {{ form2 }}
+                <label for="image">Profile image:</label>
+                <input type="file" name="image">
+
+                <label for="image_id">Image of your ID:</label>
+                <input type="file" name="image_id">
+
+                <label for="phone_number">Phone number:</label>
+                <input type="tel" name="phone_number">
+
+                <label for="city">City:</label>
+                <select type="text" name="city">
+                    {% for city in cities_list %}
+                    <option value="{{city}}">{{city}}</option>
+                    {% endfor %}
+                </select>
+                <label for="address">Adress:</label>
+                <input type="text" name="address">
+
+                <label for="charge_rate">How much do you charge in KM:</label>
+                <input type="number" name="charge_rate">
+
+                <label for="description">Describe yourself in one or two sentences:</label>
+                <textarea type="tex" name="description"></textarea>
+
                 <button class="submit-2" type="submit" name="submit" id="submit">SUBMIT</button>
             </form>
         </div>  

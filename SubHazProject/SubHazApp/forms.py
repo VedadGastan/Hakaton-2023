@@ -15,12 +15,3 @@ class RegisterUserForm(UserCreationForm):
         model = User
         fields = ('username', 'first_name', 'last_name', 'email' ,'password1', 'password2')
 
-
-class RegisterProfileForm(ModelForm):
-    profile_type = forms.ChoiceField(choices = (("Consultant", "Consultant"), ("Non-Consultant", "Non-Consultant")))
-    phone_number = PhoneNumberField()
-    address = forms.CharField(max_length=200)
-
-    class Meta:
-        model = Profile
-        fields = ('profile_type', 'phone_number' , 'address',)

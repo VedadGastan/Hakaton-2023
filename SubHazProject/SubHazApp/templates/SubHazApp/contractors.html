@@ -10,21 +10,16 @@
 
 <section class="contractors">
     <div class="element">
-        <h2 class="title-h2">Our Best Azbestos Contractors</h2>
+        <h2 class="title-h2">Our Best Dog Specalists</h2>
         <p class="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <div class="cotractor-grid">
-            {% for certificate in certificates.all|slice:"0:6" %}
-            {% if certificate.certificate_type == 'CAC' or certificate.certificate_type == 'CSST' or certificate.certificate_type == 'NIOSH 582'%}
-                <a href="{% url 'contractor' certificate.consultant_Id %}"><div class="contractor-display">
-                    <img src="https://images.pexels.com/photos/2787341/pexels-photo-2787341.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="female-img">
-                    <h3 class="title-h3">{{certificate.consultant_Id}}</h3>
-                    {% if certificate.consultant_Id.consultant_company != None %}
-                    <p class="text">{{certificate.consultant_Id.consultant_company}}</p>
-                    {% else %}
-                    <p class="text">No Company Association</p>
-                    {% endif %}
+            {% for profile in profiles|slice:"0:6" %}
+                <a href="#"><div class="contractor-display">
+                    <img src="{{profile.image.url}}" alt="female-img">
+                    <h3 class="title-h3">{{profile.user.first_name}} {{profile.user.last_name}}</h3>
+                    <p class="text">{{profile.description}}</p>
+                    <p class="text" style="margin-top: 15px;">{{profile.phone_number}}</p>
                 </div></a>
-            {% endif %}
             {% empty %}
             <h1 class="title-h1">No current consultants available!</h1>
             {% endfor %}
@@ -34,6 +29,5 @@
 
 <!--NEWSLETTER-->
 
-{% include "SubHazApp/global/newsletter.html" %}
 
 {% endblock %}

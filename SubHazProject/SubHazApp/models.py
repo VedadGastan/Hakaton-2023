@@ -44,18 +44,9 @@ class Profile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     phone_number = PhoneField(null=False, blank=False, unique=True)
     address = models.CharField(max_length=200)
-    region = models.CharField(max_length=200)
-    district = models.CharField(max_length=200)
-    rate_range = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    charge_rate = models.CharField(max_length=200)
     status = models.IntegerField(choices=AUTHENTICATION, default=0)
+    description = models.TextField(max_length=1000)
     def __str__(self):
         return self.user.username
-        
-
-class Unavailability(models.Model):
-    profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
-    busy_from = models.DateField()
-    busy_until = models.DateField()
-
-    def __str__(self):
-        return self.profile.first_name + " " + self.profile.first_name
