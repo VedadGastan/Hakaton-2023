@@ -91,29 +91,6 @@ def register_user(request):
     return render(request, 'SubHazApp/authenticate/register.html', {'form1':form1, 'cities_list':cities_list})
 
 
-
-def unavailability(request):
-    current_user = request.user
-    if current_user.is_authenticated and Profile.objects.filter(user=current_user).exists():
-        if request.method == "POST":
-
-            busy_from = request.POST.get('busy_from')
-            busy_until = request.POST.get('busy_until')
-            consultant = Profile.objects.get(user=current_user)
-            if busy_from > busy_until:
-                messages.success(request, ("Invalid dates, try again"))
-                return render(request, 'SubHazApp/authenticate/unavailability.html')
-            else:
-                unavailability = Unavailability(profile=consultant, busy_from=busy_from, busy_until=busy_until)
-                unavailability.save()
-                return redirect('contractor', name=consultant)
-        else:
-            return render(request, 'SubHazApp/authenticate/unavailability.html')
-
-    else:
-        messages.success(request, ("You need to login first"))
-        return redirect('login')
-
 def index(request):
     profiles = Profile.objects.all()
     return render(request, 'SubHazApp/index.html', {'profiles': profiles, })

@@ -6,7 +6,7 @@
     <div class="element">
         <h2 class="title-h2" style="color: white">Search through our members to find <br> the best one that suits your needs</h2>
         <div class="search search-2">
-            <form id="search" action="#" method="POST">
+            <form id="search" action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" name="searched" placeholder="Search by city of interest">
