@@ -1,4 +1,5 @@
 
+/*# sourceMappingURL=styles.css.map */
 * {
 	margin: 0;
 	padding: 0;
@@ -274,14 +275,14 @@ header.logo {
 }
 .companies-img {
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	-moz-column-gap: 70px;
 	column-gap: 70px;
 	row-gap: 15px;
 	img {
 		width: 100%;
-		-o-object-fit: contain;
-		object-fit: contain;
+		-o-object-fit: cover;
+		object-fit: cover;
 	}
 }
 #zig-zag {
@@ -318,7 +319,7 @@ header.logo {
 	left: 40px !important;
 }
 .abs-bg {
-	background-image: url("../images/temp.jpg");
+	background-image: url(../images/temp.jpg);
 	position: absolute;
 	top: auto;
 	bottom: auto;
@@ -484,8 +485,8 @@ header.logo {
 		display: block;
 		width: 395px;
 		height: 450px;
-		-o-object-fit: cover;
-		object-fit: cover;
+		-o-object-fit: contain;
+		object-fit: contain;
 		margin-top: 0;
 		padding-bottom: 0;
 		padding-left: 0;
@@ -566,7 +567,7 @@ header.logo {
 	p {
 		font-size: 22px;
 		padding: 30px 40px;
-		color: #fffa00;
+		color: #4a4e54;
 		transition: 0.3s;
 		&:hover {
 			color: #173574;

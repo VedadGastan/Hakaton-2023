@@ -20,8 +20,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-rate_range = [("$10-$20", "$10-$20"), ("$20-$30", "$20-$30"), ("$30-$40", "$30-$40"), ("$40-$50", "$40-$50"), ("$50+", "$50+")]
-
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -47,16 +45,17 @@ class Profile(models.Model):
     phone_number = PhoneField(null=False, blank=False, unique=True)
     address = models.CharField(max_length=200)
     region = models.CharField(max_length=200)
-    district = models.CharField(max_length=200, blank=True, null=True)
-    rate_range = models.CharField(choices=rate_range, max_length=200, blank=True, null=True)
+    district = models.CharField(max_length=200)
+    rate_range = models.CharField(max_length=200)
+    status = models.IntegerField(choices=AUTHENTICATION, default=0)
     def __str__(self):
         return self.user.username
         
 
 class Unavailability(models.Model):
-    consultant_Id = models.ForeignKey('Profile', on_delete=models.CASCADE)
+    profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
     busy_from = models.DateField()
     busy_until = models.DateField()
 
     def __str__(self):
-        return self.consultant_Id.name
+        return self.profile.first_name + " " + self.profile.first_name

@@ -22,7 +22,7 @@ def search(request):
 
     regions=[]
     temp=[]
-    regions_dict=Consultant.objects.values('region')
+    regions_dict=Profile.objects.values('region')
 
     for item in regions_dict:
         for key in item:
@@ -37,7 +37,7 @@ def search(request):
         searched = request.POST.get('searched')
         searched_region = request.POST.get('searched_region')
         searched_district = request.POST.get('searched_district')
-        certificates = Profile.objects.filter(certificate_type__contains=searched)
+        certificates = Profile.objects.filter(certificate_type__contains=searched)#
         for cert in certificates:
             if cert.consultant_Id.region == searched_region and cert.consultant_Id.district == searched_district and cert.status==1:
                 results.append(cert)
@@ -54,9 +54,8 @@ def login_user(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        profile_type = request.POST['profile_type']
         user = authenticate(request, username=username, password=password)
-        if profile_type == 'consultant' and user is None:
+        if user is None:
             return redirect('register')
 
         else:
@@ -123,17 +122,17 @@ def register_user(request):
 
 def unavailability(request):
     current_user = request.user
-    if current_user.is_authenticated and Consultant.objects.filter(user_id=current_user).exists():
+    if current_user.is_authenticated and Profile.objects.filter(user=current_user).exists():
         if request.method == "POST":
 
             busy_from = request.POST.get('busy_from')
             busy_until = request.POST.get('busy_until')
-            consultant = Consultant.objects.get(user_id=current_user)
+            consultant = Profile.objects.get(user=current_user)
             if busy_from > busy_until:
                 messages.success(request, ("Invalid dates, try again"))
                 return render(request, 'SubHazApp/authenticate/unavailability.html')
             else:
-                unavailability = Unavailability(consultant_Id=consultant, busy_from=busy_from, busy_until=busy_until)
+                unavailability = Unavailability(profile=consultant, busy_from=busy_from, busy_until=busy_until)
                 unavailability.save()
                 return redirect('contractor', name=consultant)
         else:
@@ -158,7 +157,7 @@ def client(request):
 
 def contractors(request):
     certificates = []
-    certificates_all = Certificate.objects.all()
+    certificates_all = Profile.objects.all()
     for certificate in certificates_all:
         if certificate.status == 1:
             certificates.append(certificate)
@@ -172,12 +171,12 @@ delta = 0
 def contractor(request, name):
     is_consultant = False
     current_user = request.user
-    if current_user.is_authenticated and Consultant.objects.filter(user_id=current_user).exists():
+    if current_user.is_authenticated and Profile.objects.filter(user=current_user).exists():
         is_consultant = True
 
-    contractor = Consultant.objects.get(name=name)
-    unavailabilities = Unavailability.objects.filter(consultant_Id=contractor)
-    if Certificate.objects.get(consultant_Id=contractor).status == 0:
+    contractor = Profile.objects.get(user=current_user)
+    unavailabilities = Unavailability.objects.filter(profile=contractor)
+    if contractor.status == 0:
         messages.success(request, ("We are still validating this account!"))
         return redirect('home')
 
