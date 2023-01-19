@@ -625,10 +625,13 @@ header.logo {
 	text-align: center;
 	height: 500px;
 	background-image: url(../images/temp_1.jpg);
+	background-repeat: no-repeat;
+	object-fit: contain;
 	margin: 0 40px;
 	border-radius: 30px;
 	overflow: hidden;
 	margin-bottom: 150px;
+	background-size: cover;
 }
 .overlay-5 {
 	display: flex;
