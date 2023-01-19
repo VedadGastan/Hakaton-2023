@@ -1469,6 +1469,9 @@ textarea {
 .contractors .element .cotractor-grid .contractor-display img {
   width: 100%;
   border-radius: 20px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .contractors .element .cotractor-grid .contractor-display h3 {
   margin-top: 20px;

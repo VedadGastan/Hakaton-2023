@@ -109,7 +109,7 @@
             <h2 class="title-h2">These are some of our TOP members:</h2>
             
             <div class="offer-1">
-                {% for profile in profiles %}
+                {% for profile in profiles|slice:":3" %}
                 <div class="v-container"><a href="#">
                     <img src="{{profile.image.url}}" alt="image">
                     <h5>{{profile.user.first_name}} {{profile.user.last_name}}</h5>
@@ -133,7 +133,7 @@
     <!--LEGAL-->
     
     <section class="legal">
-        <div id="anchor"></div>
+        <a id="anchor" name="anchor"></a>
         <div class="element">
             <div class="flex-1">
                 <div class="container-1">
