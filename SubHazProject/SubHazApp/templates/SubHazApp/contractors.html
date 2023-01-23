@@ -4,14 +4,14 @@
 
 <section class="banner">
     <div class="element">
-        <h1>Members</h1>
+        <h1>Članovi</h1>
     </div>
 </section>
 
 <section class="contractors">
     <div class="element">
-        <h2 class="title-h2">Our Best Dog Specalists</h2>
-        <p class="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h2 class="title-h2">Naši najbolji stručnjaci za pse</h2>
+        <p class="text"> </p>
         <div class="cotractor-grid">
             {% for profile in profiles|slice:"0:6" %}
                 <a href="#"><div class="contractor-display">
@@ -21,7 +21,7 @@
                     <p class="text" style="margin-top: 15px;">{{profile.phone_number}}</p>
                 </div></a>
             {% empty %}
-            <h1 class="title-h1">No current consultants available!</h1>
+            <h1 class="title-h1">Trenutno nema dostupnih članova!</h1>
             {% endfor %}
         </div>
     </div>

@@ -9,13 +9,13 @@
         <div class="form">
             <form action="#" method="post">
                 {% csrf_token %}
-                <input id="username" type="text" name="username" placeholder="Username" required> <br>
-                <input id="password" type="password" name="password" placeholder="Password" required> <br>
+                <input id="username" type="text" name="username" placeholder="Korisničko ime" required> <br>
+                <input id="password" type="password" name="password" placeholder="Šifra" required> <br>
 
                 <button class="submit-2" type="submit" name="submit" id="submit">SUBMIT</button>
             </form>
         </div> 
-        <p class="text">Don't have a account? Try to <a href="{% url 'register' %}"> sign up</a></p>
+        <p class="text">Nemate račun? Pokušaj<a href="{% url 'register' %}"> registrovati se</a></p>
     </div>
     
 </section>

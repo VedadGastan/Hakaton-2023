@@ -4,13 +4,13 @@
 
 <section class="banner work-banner">
     <div class="element">
-        <h2 class="title-h2" style="color: white">Search through our members to find <br> the best one that suits your needs</h2>
+        <h2 class="title-h2" style="color: white">Pretražite naše članove da pronađete <br> koji najbolje odgovara vašim potrebama</h2>
         <div class="search search-2">
             <form id="search" action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" name="searched" placeholder="Search by city of interest">
-                <button type="submit" name="submit">SEARCH</button>
+                <button type="submit" name="submit">PRETRAŽI</button>
             </form>
         </div>
 
@@ -21,7 +21,7 @@
 <section class="work">
     <div class="element">
         <a id="anchor" name="anchor"></a>
-        <h2 class="title-h2" align="center">Search results:</h2>
+        <h2 class="title-h2" align="center">Rezultati pretraživanja: </h2>
         {% if searched %}
         <div class="work-grid">
             {% for result in results %}
@@ -33,7 +33,7 @@
                     <p style="font-size: 22px; color: #fffa00;margin-top: 15px;" class="text">{{result.charge_rate}} BAM/h</p>
                 </div></a>
             {% empty %}
-                <h1 class="title-h1">There are no current members in your town</h1>
+                <h1 class="title-h1">Trenutno nema naših članova u Vašem gradu!</h1>
             {% endfor %}
         </div>
         {% endif %}

@@ -3,45 +3,45 @@
 {% block content %}
 
 {% if form.errors %}
-<p class="text">There was an error with your form...</p>
+<p class="text">Došlo je do greške u vašem formularu...</p>
 {% endif %}
 
 <section class="register">
     <div class="element-2">
         
-        <h1 class="title-h1">Sign Up</h1>
+        <h1 class="title-h1">Registruj se</h1>
         <div class="form">
             <form action="#" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form1 }}
-                <label for="image">Profile image:</label>
+                <label for="image">Profilna slika:</label>
                 <input type="file" name="image">
 
-                <label for="image_id">Image of your ID:</label>
+                <label for="image_id">Slika vaše lične karte:</label>
                 <input type="file" name="image_id">
 
-                <label for="phone_number">Phone number:</label>
+                <label for="phone_number">Telefonski broj:</label>
                 <input type="tel" name="phone_number">
 
-                <label for="city">City:</label>
+                <label for="city">Grad:</label>
                 <select type="text" name="city">
                     {% for city in cities_list %}
                     <option value="{{city}}">{{city}}</option>
                     {% endfor %}
                 </select>
-                <label for="address">Adress:</label>
+                <label for="address">Adresa:</label>
                 <input type="text" name="address">
 
-                <label for="charge_rate">How much do you charge in KM:</label>
+                <label for="charge_rate">Koliko naplaćujete u KM:</label>
                 <input type="number" name="charge_rate">
 
-                <label for="description">Describe yourself in one or two sentences:</label>
+                <label for="description">Opišite sebe u jednoj ili dvije rečenice:</label>
                 <textarea type="tex" name="description"></textarea>
 
-                <button class="submit-2" type="submit" name="submit" id="submit">SUBMIT</button>
+                <button class="submit-2" type="submit" name="submit" id="submit">PODNESI</button>
             </form>
         </div>  
-        <p class="text">Already have a account? Try to <a href="{% url 'login' %}"> log in</a></p>
+        <p class="text">Već imate račun? Pokušaj <a href="{% url 'login' %}">prijaviti se</a></p>
     </div>
 </section>
 

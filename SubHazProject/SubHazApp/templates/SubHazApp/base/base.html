@@ -43,17 +43,17 @@
             <nav class="navbar">
                 <ul class="menu-items">
                     <li>
-                        <a href="{% url 'home' %}"><span>VEDO MEDO</span></a>
+                        <a href="{% url 'home' %}"><span>POČETNA</span></a>
                     </li>
                     <li>
-                        <a href="{% url 'home' %}#anchor"><span>ABOUT US</span></a>
+                        <a href="{% url 'home' %}#anchor"><span>O NAMA</span></a>
                     </li>
                     <li>
-                        <a href="{% url 'contractors' %}"><span>OUR MEMBERS</span></a>
+                        <a href="{% url 'contractors' %}"><span>NAŠI ČLANOVI</span></a>
                     </li>
 
                     <li>
-                        <a href="{% url 'search' %}"><span>SEARCH BAR</span></a>
+                        <a href="{% url 'search' %}"><span>PRETRAŽIVANJE</span></a>
                     </li>
                     {% if user.is_authenticated %}
                     <li>
@@ -65,7 +65,7 @@
                     </li>
                     {% endif %}
                     <li>
-                        <a href="{% url 'about' %}"><span>SIGN UP</span></a>
+                        <a href="{% url 'register' %}"><span>REGISTRUJ SE</span></a>
                     </li>
                 </ul>
             </nav>
@@ -87,34 +87,34 @@
             </div>
             <div>
                 <nav>
-                    <h5>Become a member</h5>
+                    <h5>Postani član</h5>
                     <ul>
                         <li>
-                            <a href="#"><span>Guide lines</span></a>
+                            <a href="#"><span>Smjernice</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>Registration form</span></a>
+                            <a href="#"><span>Registracijska forma</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>Rules for members</span></a>
+                            <a href="#"><span>Pravila za članove</span></a>
                         </li>
                 </nav>
             </div>
             <div>
                 <nav>
-                    <h5>Our <br> services</h5>
+                    <h5>Naše <br> usluge</h5>
                     <ul>
                         <li>
-                            <a href="#"><span>Dog sitting</span></a>
+                            <a href="#"><span>Čuvanje pasa</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>Dog walking</span></a>
+                            <a href="#"><span>Vodanje pasa</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>Dog training</span></a>
+                            <a href="#"><span>Treniranje pasa</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>Payments</span></a>
+                            <a href="#"><span>Plaćanje</span></a>
                         </li>
                 </nav>
             </div>
@@ -140,7 +140,7 @@
         </div>
         <div class="element">
             <div class="flex-5">
-                <div class="copyright"><span>© Copyright 2023. All Rights Reserved.</span></div>
+                <div class="copyright"><span>© Copyright vodaj.ba . Sva prava pridržana. </span></div>
                 <div>
                     <nav class="footer-menu-2">
                         <ul>

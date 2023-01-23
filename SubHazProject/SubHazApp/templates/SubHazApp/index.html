@@ -7,11 +7,11 @@
 
     <section class="banner" id="hero">
         <div class="element">
-            <h3>Everything for and about your dog in one place</h3>
-            <h1 style="padding-bottom: 50px;">Welcome to <span style="color: #fffa00;">vodaj.ba</span></h1>
-            <p style="padding-bottom: 75px;">Need a dog sitter or walker? Search through our many <br> members to take care of your beloved dog!</p>
+            <h3>Sve za i o Vašem psu na jednom mjestu</h3>
+            <h1 style="padding-bottom: 50px;">Dobrodošli na <span style="color: #fffa00;">vodaj.ba</span></h1>
+            <p style="padding-bottom: 75px;">Trebate dadilju ili šetaća za pse? Pretražite naše brojne <br> članove koji će se pobrinuti za Vašeg voljenog psa!</p>
             <div class="services">
-                <div id="sign-up" class="btn-secondary"><a href="{% url 'search' %}">Search</a></div>
+                <div id="sign-up" class="btn-secondary"><a href="{% url 'search' %}">PRETRAŽI</a></div>
             </div>
             
         </div>
@@ -22,12 +22,12 @@
     
     <section class="companies">
         <div class="element">
-            <h2 class="title-h2">Our website is promoting eco-fiendly and bio products</h2>
-            <p class="text">The pet shop that are our sponsors are eco friendly because they sell only environmentally friendly products. <br> The products are made without harmful chemicals, and are made from natural materials.</p>
+            <h2 class="title-h2">Naša web stranica promovira ekološke i bio proizvode</h2>
+            <p class="text">Pet shop-ovi koji su naši sponzori su ekološki prihvatljivi jer prodaju isključivo ekološki prihvatljive proizvode.<br> Proizvodi su izrađeni bez štetnih hemikalija, a izrađeni su od prirodnih materijala.</p>
             <div class="companies-img">
-                <div class="img zig-zag"><a href="https://www.facebook.com/petzone.ba/"><img src="{% static 'images/radnja1.jpg' %}" alt="dropbox" width="1500" height="350"></a><h4 align="center">Pet zone</h4></div>
-                <div class="img zig-zag"><a href="https://www.thegreenpetshop.com/"><img src="{% static 'images/radnja2.jpg' %}" alt="shopify" width="1500" height="350"></a><h4 align="center">The Green pet shop</h4></div>
-                <div class="img zig-zag"><a href="https://www.zoocentar.com/"><img src="{% static 'images/radnja3.jpg' %}" alt="intercom" width="1500" height="350"></a><h4 align="center">Zoo centar</h4></div>
+                <div class="img zig-zag"><a href="https://www.facebook.com/petzone.ba/" target="_blank"><img src="{% static 'images/radnja1.jpg' %}" alt="dropbox" width="1500" height="350"></a><h4 align="center">Pet zone</h4></div>
+                <div class="img zig-zag"><a href="https://www.thegreenpetshop.com/" target="_blank"><img src="{% static 'images/radnja2.jpg' %}" alt="shopify" width="1500" height="350"></a><h4 align="center">The Green pet shop</h4></div>
+                <div class="img zig-zag"><a href="https://www.zoocentar.com/" target="_blank"><img src="{% static 'images/radnja3.jpg' %}" alt="intercom" width="1500" height="350"></a><h4 align="center">Zoo centar</h4></div>
             </div>
     
         </div>
@@ -42,8 +42,10 @@
             <div class="element" id="zig-zag">
                 <div>
                     <!--    Ovo je prvi zig zag opis    -->
-                    <h2 class="title-h2">Our dog walkers</h2>
-                    <p class="text">A volunteer dog walker is a person who voluntarily offers their time and services to walk dogs. The goal of a volunteer dog walker is to provide the dogs with exercise, socialization, and human interaction to improve their physical and mental well-being while they wait to be adopted.</p>
+                    <h2 class="title-h2">Naši šetaći pasa</h2>
+                    <p class="text">Dobrovoljni šetač pasa je osoba koja dobrovoljno nudi svoje vrijeme i usluge šetanju pasa. Cilj dobrovoljnog šetača pasa je pružiti psima vježbu, socijalizaciju i interakciju s ljudima kako bi poboljšali njihovo fizičko i mentalno blagostanje dok čekaju na udomljavanje.
+
+                    </p>
       
                 </div>
                 <div class="img-zig-zag">
@@ -58,8 +60,8 @@
                     <img src="{% static 'images/walker2.jpg' %}" alt="image">
                 </div>
                 <div>
-                    <h2 class="title-h2">Our dog sitters</h2>
-                    <p class="text">The goal of our dog sitters is to provide a loving, safe and comfortable environment for the dogs, keeping the dogs company and making sure they are well taken care of while the owner is away.</p>
+                    <h2 class="title-h2">O čuvanju pasa</h2>
+                    <p class="text">Cilj naših čuvara pasa je da psima pruže ljubazno, sigurno i ugodno okruženje, praveći društvo psima i brinući se o njima dok je vlasnik odsutan.</p>
     
                 </div>
                 
@@ -71,8 +73,8 @@
             <div class="abs-bg" id="right"><div class="overlay-2"></div></div>        
             <div class="element" id="zig-zag">
                 <div>
-                    <h2 class="title-h2">Our dog sitters</h2>
-                    <p class="text">The goal of our dog sitters is to provide a loving, safe and comfortable environment for the dogs, keeping the dogs company and making sure they are well taken care of while the owner is away.</p>
+                    <h2 class="title-h2">O čuvanju pasa</h2>
+                    <p class="text">Cilj naših čuvara pasa je da psima pruže ljubazno, sigurno i ugodno okruženje, praveći društvo psima i brinući se o njima dok je vlasnik odsutan.</p>
                 </div>
                 <div class="img-zig-zag">
                     <img src="{% static 'images/walker2.jpg' %}" alt="image">
@@ -86,8 +88,8 @@
             <div class="abs-bg" id="right"><div class="overlay-3"></div></div>
             <div class="element" id="zig-zag">
                 <div>
-                    <h2 class="title-h2">Our dog trainers</h2>
-                    <p class="text"> A dog trainer is a professional who specializes in teaching dogs obedience, behavior modification and other skills. They use positive reinforcement techniques to help dogs learn and develop good manners, and help pet owners address specific issues such as excessive barking, aggression, or separation anxiety.</p>
+                    <h2 class="title-h2">Naši treneri pasa</h2>
+                    <p class="text">Trener pasa je profesionalac koji je specijaliziran za podučavanje pasa poslušnosti, modificiranju ponašanja i drugim vještinama. Koriste tehnike pozitivnog osnaživanja kako bi pomogli psima da nauče i razviju dobre manire i pomažu vlasnicima kućnih ljubimaca u rješavanju specifičnih problema kao što su pretjerano lajanje, agresija ili anksioznost odvajanja.</p>
                 </div>
                 <div  class="img-zig-zag">
                     <img src="{% static 'images/walker3.jpg' %}" alt="image">
@@ -103,7 +105,7 @@
     
     
     <!--DO IT ALL-->
-    
+    {% comment %}
     <section class="do-it-all">
         <div class="element" id="do-it-all">
             <h2 class="title-h2">These are some of our TOP members:</h2>
@@ -119,13 +121,13 @@
             </div>
         </div>
     </section>
-    
+    {% endcomment %}
     
     
     <section class="demo">
     <div class="overlay-5">
-        <h2>Want to become a member of our comunity?</h2>
-        <div class="btn-secondary" id="demo-btn"><a href="{% url 'about' %}">Apply here</a></div>
+        <h2>Želiš postati član naše zajednice?</h2>
+        <div class="btn-secondary" id="demo-btn"><a href="{% url 'about' %}">Apliciraj ovdje</a></div>
         
     </div>
     </section>
@@ -141,8 +143,9 @@
                         <img src="{% static 'images/logo.svg' %}" alt="image">
                     </div>
                     <div>
-                        <h3>About <span style="color: #4a4e54;">vodaj</span>.ba</h3>
-                        <p class="text">Vodaj.ba is a website where all services for your dog are presented.<br>Our members are always ready to take your dog for a walk or to be dog sitter while you are away. Also our website provides you with services like eco-friendly pet shops and dog trainers that will teach your dog good manners and to behave well around people and kids.</p>
+                        <h3>Nešto o <span style="color: #4a4e54;">vodaj</span>.ba</h3>
+                        <p class="text">Vodaj.ba je web stranica na kojoj su predstavljene sve usluge za vašeg psa.
+                            Naši članovi su uvijek spremni da izvedu vašeg psa u šetnju ili da ih dok ste odsutni. Također, naša web stranica vam pruža usluge poput ekološki prihvatljivih prodavnica kućnih ljubimaca i trenera pasa koji će naučiti vašeg psa dobrom ponašanju i u blizini ljudi i djece.</p>
                         
                     </div>
                 </div>
