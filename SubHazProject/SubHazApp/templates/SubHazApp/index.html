@@ -25,9 +25,9 @@
             <h2 class="title-h2">Naša web stranica promovira ekološke i bio proizvode</h2>
             <p class="text">Pet shop-ovi koji su naši sponzori su ekološki prihvatljivi jer prodaju isključivo ekološki prihvatljive proizvode.<br> Proizvodi su izrađeni bez štetnih hemikalija, a izrađeni su od prirodnih materijala.</p>
             <div class="companies-img">
-                <div class="img zig-zag"><a href="https://www.facebook.com/petzone.ba/" target="_blank"><img src="{% static 'images/radnja1.jpg' %}" alt="dropbox" width="1500" height="350"></a><h4 align="center">Pet zone</h4></div>
-                <div class="img zig-zag"><a href="https://www.thegreenpetshop.com/" target="_blank"><img src="{% static 'images/radnja2.jpg' %}" alt="shopify" width="1500" height="350"></a><h4 align="center">The Green pet shop</h4></div>
-                <div class="img zig-zag"><a href="https://www.zoocentar.com/" target="_blank"><img src="{% static 'images/radnja3.jpg' %}" alt="intercom" width="1500" height="350"></a><h4 align="center">Zoo centar</h4></div>
+                <div class="img zig-zag"><a href="https://www.facebook.com/petzone.ba/" target="_blank"><img src="{% static 'images/radnja1.jpg' %}" alt="petshop1" width="1500" height="350"></a><h4 align="center">Pet zone</h4></div>
+                <div class="img zig-zag"><a href="https://www.thegreenpetshop.com/" target="_blank"><img src="{% static 'images/radnja2.jpg' %}" alt="petshop2" width="1500" height="350"></a><h4 align="center">The Green pet shop</h4></div>
+                <div class="img zig-zag"><a href="https://www.zoocentar.com/" target="_blank"><img src="{% static 'images/radnja3.jpg' %}" alt="petshop3" width="1500" height="350"></a><h4 align="center">Zoo centar</h4></div>
             </div>
     
         </div>
@@ -49,7 +49,7 @@
       
                 </div>
                 <div class="img-zig-zag">
-                    <img src="{% static 'images/walker1.jpg' %}" alt="image">
+                    <img src="{% static 'images/walker1.jpg' %}" alt="slika">
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
             <div class="abs-bg" id="left"><div class="overlay-2"></div></div>        
             <div class="element" id="zig-zag">
                 <div class="img-zig-zag">
-                    <img src="{% static 'images/walker2.jpg' %}" alt="image">
+                    <img src="{% static 'images/walker2.jpg' %}" alt="slika">
                 </div>
                 <div>
                     <h2 class="title-h2">O čuvanju pasa</h2>
@@ -77,7 +77,7 @@
                     <p class="text">Cilj naših čuvara pasa je da psima pruže ljubazno, sigurno i ugodno okruženje, praveći društvo psima i brinući se o njima dok je vlasnik odsutan.</p>
                 </div>
                 <div class="img-zig-zag">
-                    <img src="{% static 'images/walker2.jpg' %}" alt="image">
+                    <img src="{% static 'images/walker2.jpg' %}" alt="slika">
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
                     <p class="text">Trener pasa je profesionalac koji je specijaliziran za podučavanje pasa poslušnosti, modificiranju ponašanja i drugim vještinama. Koriste tehnike pozitivnog osnaživanja kako bi pomogli psima da nauče i razviju dobre manire i pomažu vlasnicima kućnih ljubimaca u rješavanju specifičnih problema kao što su pretjerano lajanje, agresija ili anksioznost odvajanja.</p>
                 </div>
                 <div  class="img-zig-zag">
-                    <img src="{% static 'images/walker3.jpg' %}" alt="image">
+                    <img src="{% static 'images/walker3.jpg' %}" alt="slika">
                 </div>
             </div>
         </div>    
@@ -113,7 +113,7 @@
             <div class="offer-1">
                 {% for profile in profiles|slice:":3" %}
                 <div class="v-container"><a href="#">
-                    <img src="{{profile.image.url}}" alt="image">
+                    <img src="{{profile.image.url}}" alt="slika">
                     <h5>{{profile.user.first_name}} {{profile.user.last_name}}</h5>
                     <p>{{profile.description}}</p></a>
                 </div>
@@ -140,7 +140,7 @@
             <div class="flex-1">
                 <div class="container-1">
                     <div>
-                        <img src="{% static 'images/logo.svg' %}" alt="image">
+                        <img src="{% static 'images/logo.svg' %}" alt="logo">
                     </div>
                     <div>
                         <h3>Nešto o <span style="color: #4a4e54;">vodaj</span>.ba</h3>

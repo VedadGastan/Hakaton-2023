@@ -43,11 +43,7 @@
             <nav class="navbar">
                 <ul class="menu-items">
                     <li>
-<<<<<<< HEAD
                         <a href="{% url 'home' %}"><span>POČETNA</span></a>
-=======
-                        <a href="{% url 'home' %}"><span>HOME</span></a>
->>>>>>> 8d2f09bc836b42484dab9da0efb3edb7bbe6d46a
                     </li>
                     <li>
                         <a href="{% url 'home' %}#anchor"><span>O NAMA</span></a>
@@ -97,7 +93,7 @@
                             <a href="#"><span>Smjernice</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>Registracijska forma</span></a>
+                            <a href="{% url 'register' %}"><span>Registracijska forma</span></a>
                         </li>
                         <li>
                             <a href="#"><span>Pravila za članove</span></a>
@@ -118,7 +114,7 @@
                             <a href="#"><span>Treniranje pasa</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>Plaćanje</span></a>
+                            <a href="{% url 'about' %}"><span>Plaćanje</span></a>
                         </li>
                 </nav>
             </div>
