@@ -1,7 +1,65 @@
 {% extends 'SubHazApp/base/base.html' %}
 {% load static %}
 {% block content %}
-
+<style>
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+    --black: #3a3a3a;
+    --bijela: #4a4e54;
+    --zuta: #fffa00;
+  }
+  input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+  }
+  
+  
+  /* FILTERS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .filters {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filters * {
+    display: inline-block;
+  }
+  
+  .filters label {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.25rem;
+    border-radius: 2rem;
+    min-width: 150px;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+  
+  .filters label:hover {
+    background: var(--zuta);
+    color: var(--bijela);
+  }
+  /* FILTERING RULES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  [value="Sve"]:checked ~ .filters [for="Sve"],
+  [value="Setaci"]:checked ~ .filters [for="Setaci"],
+  [value="Cuvari"]:checked ~ .filters [for="Cuvari"],
+  [value="Treneri"]:checked ~ .filters [for="Treneri"], {
+    background: var(--zuta);
+    color: var(--bijela);
+  }
+  
+  [value="Sve"]:checked ~ .posts [data-category] {
+    display: block;
+  }
+  
+  [value="Setaci"]:checked ~ .posts .post:not([data-category~="Setaci"]),
+  [value="Cuvari"]:checked ~ .posts .post:not([data-category~="Cuvari"]),
+  [value="Trenero"]:checked ~ .posts .post:not([data-category~="Treneri"]), {
+    display: none;
+  } 
+</style>
 <section class="banner work-banner">
     <div class="element">
         <h2 class="title-h2" style="color: white">Pretražite naše članove da pronađete <br> koji najbolje odgovara vašim potrebama</h2>
@@ -9,11 +67,10 @@
             <form id="search" action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" name="searched" placeholder="Search by city of interest">
+                <input type="text" name="searched" placeholder="Upišite grad">
                 <button type="submit" name="submit">PRETRAŽI</button>
             </form>
         </div>
-
     </div>
 </section>
 
@@ -22,10 +79,27 @@
     <div class="element">
         <a id="anchor" name="anchor"></a>
         <h2 class="title-h2" align="center">Rezultati pretraživanja: </h2>
+        
         {% if searched %}
+        <div>
+            <input type="radio" id="Sve" name="categories" value="Sve" checked>
+            <input type="radio" id="Setaci" name="categories" value="Setaci">
+            <input type="radio" id="Cuvari" name="categories" value="Cuvari">
+            <ol class="filters">
+                <li>
+                 <label for="Sve">Sve</label>
+                </li>
+                 <li>
+                <label for="Setaci">Šetać</label>
+                </li>
+                <li>
+                 <label for="Cuvari">Čuvar</label>
+                </li>
+            </ol>
+        </div>
         <div class="work-grid">
             {% for result in results %}
-                <a href="#"><div class="work-display">
+                <a href="#"><div class="work-display" data-category="Setac">
                     <img src="{{result.image.url}}" alt="img">
                     <h3 class="title-h3">{{result.user.first_name}} {{result.user.last_name}}</h3>
                     <p class="text">{{result.description}}</p>

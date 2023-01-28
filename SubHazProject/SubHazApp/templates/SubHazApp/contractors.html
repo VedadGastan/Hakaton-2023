@@ -1,12 +1,29 @@
 {% extends 'SubHazApp/base/base.html' %}
 {% load static %}
 {% block content %}
+{% comment "" %}
+<section class="banner work-banner">
+    <div class="element">
+        <h2 class="title-h2" style="color: white">Pretražite naše članove da pronađete <br> koji najbolje odgovara vašim potrebama</h2>
+        <div class="search search-2">
+            <form id="search" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="searched" placeholder="Upišite grad">
+                <button type="submit" name="submit">PRETRAŽI</button>
+            </form>
+        </div>
 
+    </div>
+</section>
+{% endcomment %}
 <section class="banner">
     <div class="element">
         <h1>Članovi</h1>
     </div>
 </section>
+
+
 
 <section class="contractors">
     <div class="element">
@@ -26,6 +43,7 @@
         </div>
     </div>
 </section>
+
 
 <!--NEWSLETTER-->
 
