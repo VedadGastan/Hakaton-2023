@@ -2251,4 +2251,28 @@ textarea {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
+	.login {
+		.element-2 {
+			min-width: 550px;
+			.form input {
+				border: 1px solid #6a6c70;
+				border-radius: 30px;
+				font-size: 12px;
+				padding: 14px 44px;
+				color: #6a6c70;
+				width: 100%;
+			  }
+			  #submit {
+				padding: 15px 35px;
+				background-color: #f2ee03;
+				border: none;
+				border-radius: 30px;
+				color: white;
+				font-size: 18px;
+				cursor: pointer;
+				transition: 0.3s;
+				font-weight: 900;
+			  }
+		}
+	}
 }

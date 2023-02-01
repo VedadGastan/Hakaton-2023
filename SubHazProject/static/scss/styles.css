@@ -325,7 +325,6 @@ header.logo {
   margin-top: 20px;
 }
 
-
 #right {
   right: 40px !important;
 }
@@ -2277,5 +2276,27 @@ textarea {
   }
   .work .work-grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .login .element-2 {
+    min-width: 550px;
+  }
+  .login .element-2 .form input {
+    border: 1px solid #6a6c70;
+    border-radius: 30px;
+    font-size: 12px;
+    padding: 14px 44px;
+    color: #6a6c70;
+    width: 100%;
+  }
+  .login .element-2 #submit {
+    padding: 15px 35px;
+    background-color: #f2ee03;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 900;
   }
 }/*# sourceMappingURL=styles.css.map */
