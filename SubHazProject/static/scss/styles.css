@@ -2241,6 +2241,9 @@ textarea {
   }
 }
 @media screen and (max-width: 550px) {
+  header {
+    justify-content: center;
+  }
   .banner {
     height: 90vh;
   }
