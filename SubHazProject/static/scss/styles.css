@@ -1,4 +1,4 @@
-/*# sourceMappingURL=styles.css.map */
+
 * {
   margin: 0;
   padding: 0;
@@ -1206,9 +1206,7 @@ textarea {
 }
 
 .fade {
-  -webkit-animation-name: fade;
   animation-name: fade;
-  -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
 }
 
@@ -1879,7 +1877,8 @@ textarea {
     padding-top: 100px;
   }
   .element-2 {
-    min-width: 950px;
+    min-width: 360px;
+    padding-inline: 60px !important;
   }
   .banner {
     height: 90vh;
@@ -2241,9 +2240,6 @@ textarea {
   }
 }
 @media screen and (max-width: 550px) {
-  header {
-    justify-content: center;
-  }
   .banner {
     height: 90vh;
   }
@@ -2255,7 +2251,6 @@ textarea {
     flex-direction: column;
     margin-inline: 0px;
     margin-block: 8px;
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }
@@ -2281,7 +2276,7 @@ textarea {
     grid-template-columns: repeat(1, 1fr);
   }
   .login .element-2 {
-    min-width: 550px;
+    max-width: 768px;
   }
   .login .element-2 .form input {
     border: 1px solid #6a6c70;
@@ -2289,7 +2284,6 @@ textarea {
     font-size: 12px;
     padding: 14px 44px;
     color: #6a6c70;
-    width: 100%;
   }
   .login .element-2 #submit {
     padding: 15px 35px;

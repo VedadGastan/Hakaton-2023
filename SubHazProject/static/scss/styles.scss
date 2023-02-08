@@ -1811,7 +1811,9 @@ textarea {
 		padding-top: 100px;
 	}
 	.element-2 {
-		min-width: 950px;
+		min-width: 360px;
+		padding-inline: 60px !important;
+	
 	}
 	.banner {
 		height: 90vh;
@@ -1827,6 +1829,7 @@ textarea {
 			width: 50%;
 		}
 	}
+	
 }
 @media screen and (max-width: 1000px) {
 	.search_main {
@@ -2212,6 +2215,7 @@ textarea {
 	header {
 		justify-content: center;
 	}
+@media screen and (max-width: 768px) {
 	.banner {
 		height: 90vh;
 	}
@@ -2256,14 +2260,13 @@ textarea {
 	}
 	.login {
 		.element-2 {
-			min-width: 550px;
+			max-width: 768px;
 			.form input {
 				border: 1px solid #6a6c70;
 				border-radius: 30px;
 				font-size: 12px;
 				padding: 14px 44px;
 				color: #6a6c70;
-				width: 100%;
 			  }
 			  #submit {
 				padding: 15px 35px;
