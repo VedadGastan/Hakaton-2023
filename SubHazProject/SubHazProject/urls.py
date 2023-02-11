@@ -24,7 +24,7 @@ urlpatterns = [
     path('', index, name='home'),
     path('subscriptions', about, name='about'),
 
-    path('members/', contractors, name='contractors'),
+    path('clanovi/', contractors, name='contractors'),
 
     path('search/', search, name='search'),
 
@@ -32,10 +32,6 @@ urlpatterns = [
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
     path('register/', register_user, name='register'),
-
-
-    path('blog/', blog, name='blog'),
-    path('posts/<slug:slug>/', post_details, name='post_details'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

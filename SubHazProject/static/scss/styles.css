@@ -156,7 +156,7 @@ header.logo {
 .title-h1 {
   font-size: 46px;
   font-weight: 900;
-  color: #173574;
+  color: #f2ee03;
 }
 
 .title-h2 {
@@ -168,7 +168,7 @@ header.logo {
 .title-h3 {
   font-size: 26px;
   font-weight: 900;
-  color: #173574;
+  color: #f2ee03;
   margin-bottom: 50px;
 }
 
@@ -178,7 +178,7 @@ header.logo {
 
 .btn-primary {
   padding: 15px 60px;
-  background-color: #306fea;
+  background-color: #f2ee03;
   color: white;
   font-size: 16px;
   border-radius: 30px;
@@ -303,6 +303,7 @@ header.logo {
 
 .zig-zag {
   position: relative;
+  margin-bottom: 40px;
 }
 .zig-zag img {
   max-width: 515px;
@@ -1654,7 +1655,7 @@ textarea {
 }
 .search-results .results .consultant .consultant_data .basic_info .btn-primary {
   padding: 15px 60px;
-  background-color: #306fea;
+  background-color: #f2ee03;
   color: white;
   font-size: 16px;
   border-radius: 30px;
@@ -1665,7 +1666,7 @@ textarea {
   cursor: pointer;
 }
 .search-results .results .consultant .consultant_data .basic_info .btn-primary:hover {
-  background-color: #173574;
+  background-color: #d4d105;
 }
 .search-results .results .consultant .consultant_data .categories {
   padding-top: 35px;
@@ -1815,7 +1816,7 @@ textarea {
 }
 .messages .element {
   max-width: 800px;
-  background-color: rgba(48, 111, 234, 0.4);
+  background-color: rgba(231, 234, 48, 0.4);
   color: white;
   font-size: 18px;
   padding-block: 15px;
@@ -1894,6 +1895,12 @@ textarea {
   }
 }
 @media screen and (max-width: 1000px) {
+  .logo-text {
+    display: none;
+  }
+  #logo-text {
+    margin-left: 110px !important;
+  }
   .search_main .job-search form .certificate_search {
     display: block;
   }
@@ -1991,16 +1998,16 @@ textarea {
     color: black;
   }
   header .navbar ul li a:after {
-    background-color: #306fea;
+    background-color: #f2ee03;
   }
   header .navbar .btn-secondary a {
-    color: #306fea;
-    border: 1px solid #306fea;
+    color: #f2ee03;
+    border: 1px solid #f2ee03;
   }
   header .navbar .btn-secondary a:hover {
     color: white;
-    border: 1px solid #306fea;
-    background-color: #306fea;
+    border: 1px solid #f2ee03;
+    background-color: #f2ee03;
   }
   .post-image-right {
     width: 100%;
@@ -2082,7 +2089,13 @@ textarea {
     margin-top: 40px;
   }
   .container-1 img {
-    width: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    padding: 40px;
+  }
+  .container-1 h3, .container-1 p {
+    text-align: center;
+    margin: 20px auto;
   }
   .text-1 {
     flex-direction: column;
@@ -2239,7 +2252,7 @@ textarea {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
   .banner {
     height: 90vh;
   }
@@ -2258,7 +2271,7 @@ textarea {
     width: auto;
   }
   .companies-img {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .container-2 {
     margin: 80px 40px;

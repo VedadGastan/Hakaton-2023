@@ -26,7 +26,7 @@
 <body>
     <header class="sticky">
 
-            <div><a href="{% url 'home' %}"><div style="display: flex; justify-content: center; align-items: center;"><img class="logo" src="{% static 'images/logo.svg' %}" alt="Logo" width="80"><span id="logo-text" style=" font-family: 'Ubuntu'; margin-left: 20px; font-size: 40px; color: white;">Vodaj</span><span style=" font-family: 'Ubuntu';font-size: 40px; color: #fffa00;">.ba</span></span></div></a> </div>
+            <div><a href="{% url 'home' %}"><div style="display: flex; justify-content: center; align-items: center;"><img class="logo" src="{% static 'images/logo.svg' %}" alt="Logo" width="80"><span class="logo-text" id="logo-text" style=" font-family: 'Ubuntu'; margin-left: 20px; font-size: 40px; color: white;">Vodaj</span><span class="logo-text" style=" font-family: 'Ubuntu';font-size: 40px; color: #fffa00;">.ba</span></span></div></a> </div>
 
             <input type="checkbox" id="checkbox" class="checkbox"/>
             <div class="hamburger-lines">
@@ -47,9 +47,6 @@
                         <a href="{% url 'contractors' %}"><span>NAŠI ČLANOVI</span></a>
                     </li>
 
-                    <li>
-                        <a href="{% url 'search' %}"><span>PRETRAŽIVANJE</span></a>
-                    </li>
                     {% if user.is_authenticated %}
                     <li>
                         <a href="{% url 'logout' %}"><span>LOGOUT</span></a>

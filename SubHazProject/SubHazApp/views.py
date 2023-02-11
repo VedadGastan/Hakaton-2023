@@ -98,11 +98,6 @@ def index(request):
 def about(request):
     return render(request, 'SubHazApp/about.html')
 
-def contact(request):
-    return render(request, 'SubHazApp/contact.html')
-
-def client(request):
-    return render(request, 'SubHazApp/client.html')
 
 
 def contractors(request):
@@ -114,21 +109,3 @@ def contractors(request):
 
     return render(request, 'SubHazApp/contractors.html', {'profiles':profiles})
 
-
-
-def job_offers(request):
-    return render(request, 'SubHazApp/job-offers.html')
-
-def work(request):
-    return render(request, 'SubHazApp/work.html')
-
-
-def blog(request):
-    posts = Post.objects.all()
-    return render(request, 'SubHazApp/blog.html', {'posts':posts})
-
-
-def post_details(request, slug):
-    posts = Post.objects.all()
-    post = Post.objects.get(slug=slug)
-    return render(request, 'SubHazApp/blog-inner.html', {'post':post, 'posts':posts})
