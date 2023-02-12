@@ -172,6 +172,7 @@ header.logo {
 }
 .text {
 	font-size: 16px;
+	line-height: 26px;
 }
 .btn-primary {
 	padding: 15px 60px;
@@ -184,7 +185,7 @@ header.logo {
 	transition: 0.3s;
 	cursor: pointer;
 	&:hover {
-		background-color: #173574;
+		background-color: #d4d105;
 	}
 }
 .link {
@@ -195,7 +196,7 @@ header.logo {
 	text-decoration: none;
 	transition: 0.2s;
 	&:hover {
-		color: #173574;
+		color: #d4d105;
 	}
 }
 #hero {
@@ -242,6 +243,9 @@ header.logo {
 		}
 	}
 }
+
+
+
 #login {
 	a {
 		padding: 12px 50px;
@@ -1377,7 +1381,6 @@ textarea {
 	}
 }
 .contractors {
-	padding-top: 100px;
 	padding-bottom: 200px;
 	.element {
 		text-align: center;
@@ -1403,6 +1406,20 @@ textarea {
 				}
 				h3 {
 					margin-top: 20px;
+				}
+				.category{
+					color: white;
+					margin-top: 20px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					span{
+						background-color: #f2ee03;
+						padding: 4px 14px;
+						margin-inline: 5px;
+						border: 1px solid #f2ee03;
+						border-radius: 10px;
+					}
 				}
 			}
 		}
@@ -1464,28 +1481,28 @@ textarea {
 		}
 	}
 }
-.search_main {
-	padding-top: 250px;
+.search_main{
+	padding-top: 80px;
 	min-height: 60vh;
-	.job-search {
-		form {
-			text-align: center;
-			.certificate_search {
-				display: flex;
-				align-items: baseline;
-				justify-content: space-between;
-				.first_search_option {
+	.title-h2{
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	.job-search{
+		form{
+			.certificate_search{
+				.first_search_option{
 					position: relative;
 					border: 1px solid #878889;
 					border-radius: 20px;
 					overflow: hidden;
-					i {
+					i{
 						position: absolute;
 						top: 50%;
 						transform: translate(0%, -50%);
 						left: 20px;
 					}
-					select {
+					input{
 						padding-block: 10px;
 						border-radius: 20px;
 						width: 360px;
@@ -1493,41 +1510,30 @@ textarea {
 						font-size: 18px;
 						border: none;
 						border-right: 16px solid transparent;
+						
 					}
 				}
-				.second_search_option {
-					.sort_by_1 {
-						border: 1px solid #878889;
-						border-radius: 20px;
-						overflow: hidden;
-						input {
-							padding-block: 10px;
-							border-radius: 20px;
-							width: 360px;
-							padding-left: 40px;
-							font-size: 18px;
-							border: none;
-							border-right: 16px solid transparent;
-						}
-					}
-					.sort_by_2 {
-						margin-top: 20px;
-						border: 1px solid #878889;
-						border-radius: 20px;
-						overflow: hidden;
-						select {
-							padding-block: 10px;
-							border-radius: 20px;
-							width: 360px;
-							padding-left: 40px;
-							font-size: 18px;
-							border: none;
-							border-right: 16px solid transparent;
-						}
+				.second_search_option{
+					padding: 30px;
+					text-align: left;
+					border: 1px solid #878889;
+					border-radius: 20px;
+					width: 200px;
+					label{
+						padding-inline: 10px;
+						font-size: 18px;
 					}
 				}
+				
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				
+				
 			}
-			button {
+			
+			text-align: center;
+			button{
 				margin-top: 50px;
 				margin-bottom: 50px;
 				padding-inline: 90px;
@@ -1845,15 +1851,17 @@ textarea {
 			form {
 				.certificate_search {
 					display: block;
-					input {
-						width: 100%;
-						margin-bottom: 20px;
-					}
 					select {
 						width: 100%;
 					}
 					i {
 						top: 20%;
+					}
+					.second_search_option{
+						width: 160px;
+						margin: auto;
+						margin-top: 20px;
+						
 					}
 				}
 				button {

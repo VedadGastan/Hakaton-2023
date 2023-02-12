@@ -174,6 +174,7 @@ header.logo {
 
 .text {
   font-size: 16px;
+  line-height: 26px;
 }
 
 .btn-primary {
@@ -188,7 +189,7 @@ header.logo {
   cursor: pointer;
 }
 .btn-primary:hover {
-  background-color: #173574;
+  background-color: #d4d105;
 }
 
 .link {
@@ -200,7 +201,7 @@ header.logo {
   transition: 0.2s;
 }
 .link:hover {
-  color: #173574;
+  color: #d4d105;
 }
 
 #hero {
@@ -1449,7 +1450,6 @@ textarea {
 }
 
 .contractors {
-  padding-top: 100px;
   padding-bottom: 200px;
 }
 .contractors .element {
@@ -1478,6 +1478,20 @@ textarea {
 }
 .contractors .element .cotractor-grid .contractor-display h3 {
   margin-top: 20px;
+}
+.contractors .element .cotractor-grid .contractor-display .category {
+  color: white;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contractors .element .cotractor-grid .contractor-display .category span {
+  background-color: #f2ee03;
+  padding: 4px 14px;
+  margin-inline: 5px;
+  border: 1px solid #f2ee03;
+  border-radius: 10px;
 }
 
 .search-2 {
@@ -1538,15 +1552,19 @@ textarea {
 }
 
 .search_main {
-  padding-top: 250px;
+  padding-top: 80px;
   min-height: 60vh;
+}
+.search_main .title-h2 {
+  text-align: center;
+  margin-bottom: 40px;
 }
 .search_main .job-search form {
   text-align: center;
 }
 .search_main .job-search form .certificate_search {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 .search_main .job-search form .certificate_search .first_search_option {
@@ -1561,7 +1579,7 @@ textarea {
   transform: translate(0%, -50%);
   left: 20px;
 }
-.search_main .job-search form .certificate_search .first_search_option select {
+.search_main .job-search form .certificate_search .first_search_option input {
   padding-block: 10px;
   border-radius: 20px;
   width: 360px;
@@ -1570,34 +1588,16 @@ textarea {
   border: none;
   border-right: 16px solid transparent;
 }
-.search_main .job-search form .certificate_search .second_search_option .sort_by_1 {
+.search_main .job-search form .certificate_search .second_search_option {
+  padding: 30px;
+  text-align: left;
   border: 1px solid #878889;
   border-radius: 20px;
-  overflow: hidden;
+  width: 200px;
 }
-.search_main .job-search form .certificate_search .second_search_option .sort_by_1 input {
-  padding-block: 10px;
-  border-radius: 20px;
-  width: 360px;
-  padding-left: 40px;
+.search_main .job-search form .certificate_search .second_search_option label {
+  padding-inline: 10px;
   font-size: 18px;
-  border: none;
-  border-right: 16px solid transparent;
-}
-.search_main .job-search form .certificate_search .second_search_option .sort_by_2 {
-  margin-top: 20px;
-  border: 1px solid #878889;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.search_main .job-search form .certificate_search .second_search_option .sort_by_2 select {
-  padding-block: 10px;
-  border-radius: 20px;
-  width: 360px;
-  padding-left: 40px;
-  font-size: 18px;
-  border: none;
-  border-right: 16px solid transparent;
 }
 .search_main .job-search form button {
   margin-top: 50px;
@@ -1904,15 +1904,16 @@ textarea {
   .search_main .job-search form .certificate_search {
     display: block;
   }
-  .search_main .job-search form .certificate_search input {
-    width: 100%;
-    margin-bottom: 20px;
-  }
   .search_main .job-search form .certificate_search select {
     width: 100%;
   }
   .search_main .job-search form .certificate_search i {
     top: 20%;
+  }
+  .search_main .job-search form .certificate_search .second_search_option {
+    width: 160px;
+    margin: auto;
+    margin-top: 20px;
   }
   .search_main .job-search form button {
     width: 100%;

@@ -11,24 +11,7 @@ import calendar
 from dateutil import relativedelta
 import json
 
-cities_list = ["Sarajevo", "Tuzla", "Zenica","Mostar", "Banja Luka"]
-
-def search(request):
-    if request.method == "POST":
-        results = []
-        searched = request.POST.get('searched')
-        profiles = Profile.objects.filter(city__contains=searched)
-        for profile in profiles:
-            if profile.city == searched and profile.status==1:
-                results.append(profile)
-
-
-        return render(request, 'SubHazApp/work.html', {'searched' : searched, 'results':results, 'cities_list' : cities_list, })
-    else:
-        return render(request, 'SubHazApp/work.html', {'cities_list' : cities_list,})
-
-
-
+cities_list = ["Sarajevo", "Zenica", "Tuzla", "Banja Luka", "Mostar"]
 
 def login_user(request):
     if request.method == "POST":
@@ -59,7 +42,6 @@ def logout_user(request):
 
 
 def register_user(request):
-    
     if request.method == "POST":
         form1 = RegisterUserForm(request.POST)
         if form1.is_valid():
@@ -95,17 +77,42 @@ def index(request):
     profiles = Profile.objects.all()
     return render(request, 'SubHazApp/index.html', {'profiles': profiles, })
 
-def about(request):
-    return render(request, 'SubHazApp/about.html')
 
+def subscriptions(request):
+    return render(request, 'SubHazApp/subscriptions.html')
 
 
 def contractors(request):
-    profiles = []
-    profiles_all = Profile.objects.all()
-    for profile in profiles_all:
-        if profile.status == 1:
-            profiles.append(profile)
+    searched = 0
+    profiles = Profile.objects.filter(status=1)
+    if request.method == "POST":
+        searched=1
+        
 
-    return render(request, 'SubHazApp/contractors.html', {'profiles':profiles})
+        city = request.POST.get('searched')
 
+        setac = request.POST.get('setac')
+        cuvar = request.POST.get('cuvar')
+        trener = request.POST.get('trener')
+
+        if not setac and not cuvar and not trener:
+            profiles = Profile.objects.filter(status=1, city=city)
+        if setac and not cuvar and not trener:
+            profiles = Profile.objects.filter(status=1, city=city).filter(setac=1)
+        if cuvar and not setac and not trener:
+            profiles = Profile.objects.filter(status=1, city=city).filter(cuvar=1)
+        if trener and not setac and not cuvar:
+            profiles = Profile.objects.filter(status=1, city=city).filter(trener=1)
+        if trener and setac and not cuvar:
+            profiles = Profile.objects.filter(status=1, city=city).filter(trener=1).filter(setac=1)
+        if trener and cuvar and not setac:
+            profiles = Profile.objects.filter(status=1, city=city).filter(trener=1).filter(cuvar=1)
+        if setac and cuvar and not trener:
+            profiles = Profile.objects.filter(status=1, city=city).filter(cuvar=1).filter(setac=1)
+        if setac and cuvar and trener:
+            profiles = Profile.objects.filter(status=1, city=city).filter(trener=1).filter(cuvar=1).filter(setac=1)
+
+
+        return render(request, 'SubHazApp/members.html', {'profiles':profiles, 'cities_list':cities_list, 'searched':searched})
+    else:
+        return render(request, 'SubHazApp/members.html', {'profiles':profiles, 'cities_list':cities_list,'searched':searched})

@@ -4,39 +4,15 @@ from tinymce import models as tinymce_models
 from phonenumber_field.modelfields import PhoneNumberField
 from phone_field import PhoneField
 
-STATUS = (
-    (0, "Draft"),
-    (1, "Publish")
-)
-
 AUTHENTICATION = (
     (0, "Not Authenticated"),
     (1, "Authenticated")
 )
 
-class Category(models.Model): 
-    name = models.CharField(max_length=255, default="Uncategorised")
-    
-    def __str__(self):
-        return self.name
-
-class Post(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
-    image = models.ImageField(upload_to='static/featured_image/')
-    author = models.ForeignKey(User, on_delete= models.CASCADE,related_name='blog_posts')
-    category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True)
-    updated_on = models.DateTimeField(auto_now= True)
-    content = tinymce_models.HTMLField()
-    excerpt = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-
-    class Meta:
-        ordering = ['-created_on']
-
-    def __str__(self):
-        return self.title
+CHOICE = (
+    (0, "No"),
+    (1, "Yes")
+)
 
 class Profile(models.Model):
     image = models.ImageField(upload_to='media/profile_image/')
@@ -48,5 +24,8 @@ class Profile(models.Model):
     charge_rate = models.CharField(max_length=200)
     status = models.IntegerField(choices=AUTHENTICATION, default=0)
     description = models.TextField(max_length=1000)
+    setac = models.IntegerField(choices=CHOICE,default=0)
+    cuvar = models.IntegerField(choices=CHOICE,default=0)
+    trener = models.IntegerField(choices=CHOICE,default=0)
     def __str__(self):
         return self.user.username

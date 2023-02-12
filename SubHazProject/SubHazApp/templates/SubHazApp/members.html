@@ -1,0 +1,88 @@
+{% extends 'SubHazApp/base/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="banner">
+    <div class="element">
+        <h1 class="title-h1">Članovi</h1>
+        <br>
+        <p class="text">Naša stranica za čuvanje pasa ima izvrsne članove koji se s predanošću  <br> brinu  o vašim krznenim prijateljima dok ste vi odsutni.</p>
+    </div>
+</section>
+
+
+<section class="search_main" id="consultant_search">
+    <div class="element job-search">
+        <h2 class="title-h2">Naši najbolji stručnjaci za pse</h2>
+        <form action="" method="POST" >
+            {% csrf_token %}
+            <div class="certificate_search">
+                <div class="first_search_option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input list="cities" name="searched" id="searched" required placeholder="-- Filtrirajte po gradu --">
+                    <datalist id="cities">
+                        {% for city in cities_list %}
+                        <option value="{{city}}">
+                        {% endfor %}
+                    </datalist>
+                </div>
+                
+
+                <div id="second_search_option" class="second_search_option">
+                    <div id="sort_by_1" class="sort_by_1">
+                        <input type="checkbox" id="setac" name="setac" value="1"> 
+                        <label for="setac">Setač</label>
+                        <br>
+                        <input type="checkbox" id="cuvar" name="cuvar" value="1">
+                        <label for="cuvar">Čuvar</label>
+                        <br>
+                        <input type="checkbox" id="trener" name="trener" value="1">
+                        <label for="setac">Trener</label>
+                        <br>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <button class="btn-primary" type="submit" name="submit">Filtriraj</button>
+        </form>
+        
+    </div>
+</section>
+
+
+<section class="contractors">
+    <div class="element">
+        
+        <p class="text"></p>
+            <div class="cotractor-grid">
+                {% for profile in profiles %}
+                    <a href="#"><div class="contractor-display">
+                        <img src="{{profile.image.url}}" alt="female-img">
+                        <h3 class="title-h3">{{profile.user.first_name}} {{profile.user.last_name}}</h3>
+                        <p class="text">{{profile.description}}</p>
+                        <p class="text" style="margin-top: 15px;">{{profile.phone_number}}</p>
+                        
+                        <div class="category">
+                            {% if profile.setac %}
+                            <span class="keyword">Šetač</span>
+                            {% endif %}
+                            {% if profile.cuvar %}
+                            <span class="keyword">Čuvar</span>
+                            {% endif %}
+                            {% if profile.trener %}
+                            <span class="keyword">Trener</span>
+                            {% endif %}
+                        </div>
+                    </div></a>
+                {% empty %}
+                <h1 class="title-h1">Trenutno nema dostupnih članova!</h1>
+                {% endfor %}
+            </div>
+    </div>
+</section>
+
+<!--NEWSLETTER-->
+
+
+{% endblock %}
